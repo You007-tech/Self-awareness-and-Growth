@@ -1,0 +1,231 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#34495e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 变量类型渐变 -->
+    <linearGradient id="independentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="dependentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="latentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="observedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#229954;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="controlGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="confoundingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e67e22;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#d35400;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="moderatingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1abc9c;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#16a085;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="mediatingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ee5a52;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    
+    <!-- 发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 箭头标记 -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff" opacity="0.8"/>
+    </marker>
+    
+    <marker id="arrowheadBlue" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3498db" opacity="0.8"/>
+    </marker>
+    
+    <marker id="arrowheadRed" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" opacity="0.8"/>
+    </marker>
+    
+    <marker id="arrowheadOrange" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22" opacity="0.8"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="100%" height="100%" fill="url(#backgroundGradient)"/>
+  
+  <!-- 标题 -->
+  <text x="600" y="50" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="bold" filter="url(#glow)">
+    不同变量之间的关系
+  </text>
+  
+  <!-- 潜变量 (中心上方) -->
+  <ellipse cx="600" cy="150" rx="80" ry="40" fill="url(#latentGradient)" filter="url(#dropShadow)"/>
+  <text x="600" y="145" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">潜变量</text>
+  <text x="600" y="160" text-anchor="middle" fill="#ffffff" font-size="12">(Latent Variables)</text>
+  
+  <!-- 观测变量 (潜变量下方) -->
+  <rect x="520" y="220" width="160" height="60" rx="10" fill="url(#observedGradient)" filter="url(#dropShadow)"/>
+  <text x="600" y="245" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">观测变量</text>
+  <text x="600" y="260" text-anchor="middle" fill="#ffffff" font-size="12">(Observed Variables)</text>
+  
+  <!-- 自变量 (左侧) -->
+  <rect x="150" y="350" width="120" height="80" rx="15" fill="url(#independentGradient)" filter="url(#dropShadow)"/>
+  <text x="210" y="380" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">自变量</text>
+  <text x="210" y="395" text-anchor="middle" fill="#ffffff" font-size="12">(Independent</text>
+  <text x="210" y="408" text-anchor="middle" fill="#ffffff" font-size="12">Variables)</text>
+  
+  <!-- 因变量 (右侧) -->
+  <rect x="930" y="350" width="120" height="80" rx="15" fill="url(#dependentGradient)" filter="url(#dropShadow)"/>
+  <text x="990" y="380" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">因变量</text>
+  <text x="990" y="395" text-anchor="middle" fill="#ffffff" font-size="12">(Dependent</text>
+  <text x="990" y="408" text-anchor="middle" fill="#ffffff" font-size="12">Variables)</text>
+  
+  <!-- 控制变量 (左下) -->
+  <polygon points="100,550 200,550 150,620" fill="url(#controlGradient)" filter="url(#dropShadow)"/>
+  <text x="150" y="575" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">控制变量</text>
+  <text x="150" y="590" text-anchor="middle" fill="#ffffff" font-size="11">(Control Variables)</text>
+  
+  <!-- 混淆变量 (右下) -->
+  <polygon points="1000,550 1100,550 1050,620" fill="url(#confoundingGradient)" filter="url(#dropShadow)"/>
+  <text x="1050" y="575" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">混淆变量</text>
+  <text x="1050" y="590" text-anchor="middle" fill="#ffffff" font-size="11">(Confounding Variables)</text>
+  
+  <!-- 调节变量 (中心下方) -->
+  <ellipse cx="600" cy="550" rx="90" ry="35" fill="url(#moderatingGradient)" filter="url(#dropShadow)"/>
+  <text x="600" y="545" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">调节变量</text>
+  <text x="600" y="560" text-anchor="middle" fill="#ffffff" font-size="12">(Moderating Variables)</text>
+  
+  <!-- 中介变量 (自变量和因变量之间) -->
+  <rect x="520" y="360" width="160" height="60" rx="30" fill="url(#mediatingGradient)" filter="url(#dropShadow)"/>
+  <text x="600" y="385" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">中介变量</text>
+  <text x="600" y="400" text-anchor="middle" fill="#ffffff" font-size="12">(Mediating Variables)</text>
+  
+  <!-- 连接线和关系 -->
+  
+  <!-- 潜变量到观测变量 -->
+  <line x1="600" y1="190" x2="600" y2="220" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.8"/>
+  <text x="620" y="210" fill="#ffffff" font-size="10">测量</text>
+  
+  <!-- 自变量到中介变量 -->
+  <line x1="270" y1="390" x2="520" y2="390" stroke="#3498db" stroke-width="2" marker-end="url(#arrowheadBlue)" opacity="0.8"/>
+  
+  <!-- 中介变量到因变量 -->
+  <line x1="680" y1="390" x2="930" y2="390" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrowheadRed)" opacity="0.8"/>
+  
+  <!-- 自变量到因变量 (直接效应，虚线表示可能被中介) -->
+  <line x1="270" y1="410" x2="930" y2="410" stroke="#3498db" stroke-width="2" marker-end="url(#arrowheadBlue)" opacity="0.5" stroke-dasharray="8,4"/>
+  <text x="600" y="430" text-anchor="middle" fill="#3498db" font-size="11">直接效应</text>
+  <text x="400" y="380" text-anchor="middle" fill="#ff6b6b" font-size="11">中介效应</text>
+  
+  <!-- 自变量到观测变量 -->
+  <line x1="270" y1="370" x2="520" y2="260" stroke="#3498db" stroke-width="2" marker-end="url(#arrowheadBlue)" opacity="0.7"/>
+  
+  <!-- 观测变量到因变量 -->
+  <line x1="680" y1="260" x2="930" y2="370" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowheadRed)" opacity="0.7"/>
+  
+  <!-- 控制变量的影响 -->
+  <line x1="150" y1="550" x2="210" y2="430" stroke="#f39c12" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6" stroke-dasharray="5,5"/>
+  <line x1="150" y1="550" x2="990" y2="430" stroke="#f39c12" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6" stroke-dasharray="5,5"/>
+  <text x="80" y="490" fill="#f39c12" font-size="10">控制</text>
+  
+  <!-- 混淆变量的影响 -->
+  <path d="M 1050 550 Q 800 480 210 430" stroke="#e67e22" stroke-width="2" fill="none" marker-end="url(#arrowheadOrange)" opacity="0.6" stroke-dasharray="3,3"/>
+  <path d="M 1050 550 Q 1100 480 990 430" stroke="#e67e22" stroke-width="2" fill="none" marker-end="url(#arrowheadOrange)" opacity="0.6" stroke-dasharray="3,3"/>
+  <text x="1080" y="490" fill="#e67e22" font-size="10">混淆</text>
+  
+  <!-- 调节变量的调节作用 -->
+  <path d="M 600 515 Q 400 450 270 410" stroke="#1abc9c" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.7"/>
+  <path d="M 600 515 Q 800 450 930 410" stroke="#1abc9c" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.7"/>
+  <text x="600" y="480" text-anchor="middle" fill="#1abc9c" font-size="11">调节作用</text>
+  
+  <!-- 图例 -->
+  <g transform="translate(50, 680)">
+    <text x="0" y="0" fill="#ffffff" font-size="16" font-weight="bold">图例说明：</text>
+    
+    <line x1="0" y1="20" x2="30" y2="20" stroke="#3498db" stroke-width="3" marker-end="url(#arrowheadBlue)"/>
+    <text x="40" y="25" fill="#ffffff" font-size="12">直接因果关系</text>
+    
+    <line x1="150" y1="20" x2="180" y2="20" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="190" y="25" fill="#ffffff" font-size="12">测量关系</text>
+    
+    <line x1="280" y1="20" x2="310" y2="20" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+    <text x="320" y="25" fill="#ffffff" font-size="12">控制关系</text>
+    
+    <line x1="420" y1="20" x2="450" y2="20" stroke="#e67e22" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrowheadOrange)"/>
+    <text x="460" y="25" fill="#ffffff" font-size="12">混淆关系</text>
+    
+    <path d="M 560 20 Q 575 10 590 20" stroke="#1abc9c" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="600" y="25" fill="#ffffff" font-size="12">调节关系</text>
+  </g>
+  
+  <!-- 变量特征说明 -->
+  <g transform="translate(50, 100)">
+    <text x="0" y="0" fill="#ffffff" font-size="16" font-weight="bold">变量特征：</text>
+    <text x="0" y="22" fill="#9b59b6" font-size="13">• 潜变量：无法直接观测的理论构念</text>
+    <text x="0" y="40" fill="#27ae60" font-size="13">• 观测变量：可直接测量的具体指标</text>
+    <text x="0" y="58" fill="#3498db" font-size="13">• 自变量：研究者操控的变量</text>
+    <text x="0" y="76" fill="#e74c3c" font-size="13">• 因变量：被预测或解释的变量</text>
+  </g>
+  
+  <g transform="translate(950, 100)">
+    <text x="0" y="22" fill="#ff6b6b" font-size="13">• 中介变量：传递因果效应的变量</text>
+    <text x="0" y="40" fill="#f39c12" font-size="13">• 控制变量：保持恒定的变量</text>
+    <text x="0" y="58" fill="#e67e22" font-size="13">• 混淆变量：影响结果的第三变量</text>
+    <text x="0" y="76" fill="#1abc9c" font-size="13">• 调节变量：影响关系强度的变量</text>
+  </g>
+  
+  <!-- 动画效果 -->
+  <style>
+    .variable-box {
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    .connection-line {
+      animation: flow 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+    
+    @keyframes flow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 20; }
+    }
+  </style>
+</svg>
