@@ -2,13 +2,15 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>互动体验① - 心理学汇报</title>
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/mobile-fix.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/navigation.css">
     <script src="../assets/js/navigation.js?v=1"></script>
     
     <!-- 投票系统样式 -->
@@ -194,23 +196,6 @@
             font-weight: 600;
         }
         
-        @media (max-width: 768px) {
-            .voting-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .voting-controls {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .control-btn {
-                width: 100%;
-                max-width: 200px;
-            }
-        }
-        
         /* IP配置样式 */
         .ip-config-section {
             margin: 20px 0;
@@ -291,6 +276,220 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 12px;
             margin: 0;
+        }
+        
+        /* 移动端适配样式 */
+        @media (max-width: 768px) {
+            .voting-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .voting-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .control-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .ip-input-group {
+                flex-direction: column;
+            }
+            
+            .update-ip-btn {
+                width: 100%;
+            }
+            
+            /* 问题卡片移动端调整 */
+            .question-card {
+                padding: 20px 15px !important;
+                margin: 0 auto !important;
+                max-width: 100% !important;
+            }
+            
+            .question-title {
+                font-size: 22px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .question-subtitle {
+                font-size: 16px !important;
+                margin-top: 8px !important;
+            }
+            
+            .main-question {
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                margin: 25px 0 !important;
+                padding: 0 10px !important;
+            }
+            
+            .choices-container {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+                margin-top: 30px !important;
+                padding: 0 5px !important;
+            }
+            
+            .choice-btn {
+                padding: 16px !important;
+                min-height: 80px !important;
+            }
+            
+            .choice-letter {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 18px !important;
+            }
+            
+            .choice-title {
+                font-size: 16px !important;
+                margin-bottom: 6px !important;
+            }
+            
+            .choice-description {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* 引导区域调整 */
+            .guidance-section {
+                margin-top: 30px !important;
+            }
+            
+            .guidance-card {
+                padding: 20px !important;
+            }
+            
+            .guidance-title {
+                font-size: 20px !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .guidance-text {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .guidance-highlight {
+                padding: 12px !important;
+                border-radius: 10px !important;
+            }
+            
+            .highlight-icon {
+                font-size: 20px !important;
+                margin-right: 10px !important;
+            }
+            
+            .highlight-text {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+            }
+            
+            /* 进度提示调整 */
+            .progress-hint {
+                margin-top: 30px !important;
+                margin-bottom: 40px !important;
+            }
+            
+            .hint-content {
+                padding: 10px !important;
+            }
+            
+            .hint-arrow span {
+                font-size: 24px !important;
+            }
+        }
+        
+        /* 超小屏幕手机 */
+        @media (max-width: 480px) {
+            .question-title {
+                font-size: 20px !important;
+            }
+            
+            .question-subtitle {
+                font-size: 14px !important;
+            }
+            
+            .main-question {
+                font-size: 16px !important;
+                line-height: 1.7 !important;
+            }
+            
+            .choice-btn {
+                padding: 14px !important;
+                min-height: 75px !important;
+            }
+            
+            .choice-letter {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 16px !important;
+            }
+            
+            .choice-title {
+                font-size: 15px !important;
+            }
+            
+            .choice-description {
+                font-size: 13px !important;
+            }
+            
+            .voting-section {
+                padding: 20px 15px !important;
+            }
+            
+            .qr-title, .stats-title {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* 横屏模式 */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .page-container {
+                padding-bottom: 60px !important;
+            }
+            
+            .content-area {
+                padding: 15px !important;
+            }
+            
+            .page-header {
+                margin-bottom: 20px !important;
+            }
+            
+            .page-title {
+                font-size: 22px !important;
+                margin: 10px 0 !important;
+            }
+            
+            .question-card {
+                padding: 15px !important;
+            }
+            
+            .main-question {
+                font-size: 16px !important;
+                margin: 15px 0 !important;
+            }
+            
+            .choices-container {
+                gap: 10px !important;
+                margin-top: 20px !important;
+            }
+            
+            .choice-btn {
+                padding: 12px !important;
+                min-height: 70px !important;
+            }
+            
+            .guidance-card {
+                padding: 15px !important;
+                margin-top: 20px !important;
+            }
         }
     </style>
 </head>
@@ -536,9 +735,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
 
-    <!-- 导航系统 -->
+        <!-- 导航系统 -->
         <div class="navigation-system">
             <div class="progress-bar">
                 <div class="progress-fill" style="width: 30%"></div>
@@ -607,16 +807,136 @@
             });
         });
     </script>
-    </div>
-    <!-- 导航按钮 -->
-    <div class="nav-controls">
-        <button class="nav-btn prev-btn" onclick="window.location.href='page1.html'">← 上一页</button>
-        <div class="page-counter">
-            <span class="current-page">3</span>
-            <span class="separator">/</span>
-            <span class="total-pages">11</span>
-        </div>
-        <button class="nav-btn next-btn" onclick="window.location.href='page3.html'">下一页 →</button>
-    </div>
+    
+    <!-- 移动端适配JavaScript -->
+    <script>
+        // 移动端高度适配
+        window.addEventListener('DOMContentLoaded', function() {
+            // 修复移动端100vh问题
+            function setViewHeight() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+                
+                // 确保页面容器有最小高度
+                const pageContainer = document.querySelector('.page-container');
+                if (pageContainer) {
+                    pageContainer.style.minHeight = window.innerHeight + 'px';
+                }
+                
+                // 确保内容区域高度
+                const contentArea = document.querySelector('.content-area');
+                if (contentArea) {
+                    const navHeight = 100; // 导航条高度
+                    contentArea.style.minHeight = (window.innerHeight - navHeight) + 'px';
+                    contentArea.style.paddingBottom = '80px'; // 给导航留出空间
+                }
+                
+                // 调整交互内容区域
+                const interactiveContent = document.querySelector('.interactive-content');
+                if (interactiveContent) {
+                    interactiveContent.style.minHeight = (window.innerHeight - 200) + 'px';
+                }
+            }
+            
+            setViewHeight();
+            window.addEventListener('resize', setViewHeight);
+            
+            // 调试信息
+            console.log('Page2移动端适配已加载');
+            console.log('屏幕尺寸:', window.innerWidth, 'x', window.innerHeight);
+            
+            // 调整投票区域布局
+            const votingSection = document.querySelector('.voting-section');
+            if (votingSection && window.innerWidth < 768) {
+                votingSection.style.padding = '15px';
+                votingSection.style.marginTop = '20px';
+            }
+        });
+
+        // 触摸事件优化
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // 防止双击缩放
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, {passive: false});
+        
+        // 阻止页面下拉刷新
+        let touchStartY = 0;
+        document.addEventListener('touchstart', function(event) {
+            touchStartY = event.touches[0].clientY;
+        }, {passive: true});
+        
+        document.addEventListener('touchmove', function(event) {
+            const touchY = event.touches[0].clientY;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // 如果页面在顶部且向下滑动，阻止下拉刷新
+            if (scrollTop === 0 && touchY > touchStartY) {
+                event.preventDefault();
+            }
+        }, {passive: false});
+        
+        // 移动端按钮点击优化
+        document.addEventListener('DOMContentLoaded', function() {
+            const choiceButtons = document.querySelectorAll('.choice-btn');
+            choiceButtons.forEach(btn => {
+                btn.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                btn.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // 确保导航系统正确显示
+            if (window.navigationController) {
+                setTimeout(() => {
+                    window.navigationController.currentPage = 2;
+                    window.navigationController.updateNavigation();
+                }, 100);
+            }
+        });
+        
+        // 页面加载完成后重设导航
+        window.addEventListener('load', function() {
+            if (window.navigationController) {
+                window.navigationController.currentPage = 2;
+                window.navigationController.updateNavigation();
+            }
+            
+            // 确保页面可滚动
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+            
+            // 延迟执行一些调整，确保DOM完全加载
+            setTimeout(function() {
+                // 调整内容区域最小高度
+                const contentArea = document.querySelector('.content-area');
+                if (contentArea) {
+                    const windowHeight = window.innerHeight;
+                    const contentHeight = contentArea.offsetHeight;
+                    
+                    if (contentHeight < windowHeight - 100) {
+                        contentArea.style.minHeight = (windowHeight - 150) + 'px';
+                    }
+                }
+                
+                // 确保投票区域在移动端正确显示
+                const votingContainer = document.querySelector('.voting-container');
+                if (votingContainer && window.innerWidth < 768) {
+                    votingContainer.style.gridTemplateColumns = '1fr';
+                }
+            }, 500);
+        });
+    </script>
 </body>
 </html>
