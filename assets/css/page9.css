@@ -1,0 +1,894 @@
+/* Page 9 - 整合与成长页样式 */
+
+/* 页面容器 */
+body.page9 {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #ffecd2 50%, #ffeaa7 75%, #fab1a0 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* 确保背景覆盖整个页面 */
+html, body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #ffecd2 50%, #ffeaa7 75%, #fab1a0 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* 背景SVG动画 */
+.background-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* 成长螺旋动画 */
+.spiral-path {
+    stroke-dasharray: 20 10;
+    animation: spiralFlow 8s linear infinite;
+}
+
+@keyframes spiralFlow {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        stroke-dashoffset: -30;
+        opacity: 0.6;
+    }
+}
+
+/* 成长节点动画 */
+.growth-node {
+    animation: nodeGlow 4s ease-in-out infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-node {
+    animation-delay: 0s;
+}
+
+.process-node:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.process-node:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.process-node:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.end-node {
+    animation-delay: 4s;
+}
+
+@keyframes nodeGlow {
+    0%, 100% {
+        r: 20;
+        opacity: 0.8;
+    }
+    50% {
+        r: 25;
+        opacity: 1;
+        filter: drop-shadow(0 0 15px currentColor);
+    }
+}
+
+.growth-node:hover {
+    r: 30;
+    opacity: 1;
+    filter: drop-shadow(0 0 20px currentColor);
+}
+
+/* 整合网络动画 */
+.network-line {
+    stroke-dasharray: 15 8;
+    animation: networkPulse 6s ease-in-out infinite;
+}
+
+.network-line:nth-child(1) { animation-delay: 0s; }
+.network-line:nth-child(2) { animation-delay: 0.5s; }
+.network-line:nth-child(3) { animation-delay: 1s; }
+.network-line:nth-child(4) { animation-delay: 1.5s; }
+.network-line:nth-child(5) { animation-delay: 2s; }
+.network-line:nth-child(6) { animation-delay: 2.5s; }
+.network-line:nth-child(7) { animation-delay: 3s; }
+.network-line:nth-child(8) { animation-delay: 3.5s; }
+
+@keyframes networkPulse {
+    0%, 100% {
+        stroke-dashoffset: 0;
+        opacity: 0.5;
+        stroke-width: 3;
+    }
+    50% {
+        stroke-dashoffset: -23;
+        opacity: 0.8;
+        stroke-width: 4;
+    }
+}
+
+/* 智慧之光动画 */
+.wisdom-center {
+    animation: wisdomRadiate 5s ease-in-out infinite;
+}
+
+@keyframes wisdomRadiate {
+    0%, 100% {
+        r: 80;
+        opacity: 0.8;
+    }
+    50% {
+        r: 100;
+        opacity: 1;
+    }
+}
+
+.wisdom-point {
+    animation: wisdomTwinkle 3s ease-in-out infinite;
+}
+
+.wisdom-point:nth-child(2) { animation-delay: 0.5s; }
+.wisdom-point:nth-child(3) { animation-delay: 1s; }
+.wisdom-point:nth-child(4) { animation-delay: 1.5s; }
+.wisdom-point:nth-child(5) { animation-delay: 2s; }
+
+@keyframes wisdomTwinkle {
+    0%, 100% {
+        opacity: 0.3;
+        r: 25;
+    }
+    50% {
+        opacity: 0.8;
+        r: 35;
+    }
+}
+
+/* 成长花朵动画 */
+.flower {
+    animation: flowerBloom 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.flower:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.flower:nth-child(2) {
+    animation-delay: 3s;
+}
+
+@keyframes flowerBloom {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* 连接线条动画 */
+.connection-line {
+    stroke-dasharray: 15 10;
+    animation: connectionFlow 7s linear infinite;
+}
+
+.connection-line:nth-child(1) { animation-delay: 0s; }
+.connection-line:nth-child(2) { animation-delay: 2s; }
+.connection-line:nth-child(3) { animation-delay: 4s; }
+
+@keyframes connectionFlow {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        stroke-dashoffset: -25;
+        opacity: 0.3;
+    }
+}
+
+/* 飞舞粒子动画 */
+.particle {
+    animation: particleDance 5s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { animation-delay: 0s; }
+.particle:nth-child(2) { animation-delay: 0.8s; }
+.particle:nth-child(3) { animation-delay: 1.6s; }
+.particle:nth-child(4) { animation-delay: 2.4s; }
+.particle:nth-child(5) { animation-delay: 3.2s; }
+.particle:nth-child(6) { animation-delay: 4s; }
+
+@keyframes particleDance {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(-40px) scale(1.3);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-80px) scale(0.7);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(-40px) scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+/* 页面头部 */
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #d35400;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(211, 84, 0, 0.6);
+    animation: titleGrowth 4s ease-in-out infinite;
+}
+
+@keyframes titleGrowth {
+    0%, 100% {
+        text-shadow: 0 0 30px rgba(211, 84, 0, 0.6);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 50px rgba(211, 84, 0, 0.9), 0 0 80px rgba(230, 126, 34, 0.4);
+        transform: scale(1.02);
+    }
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #c0392b;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.intro-text {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* 成长历程时间线 */
+.growth-journey-section {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.journey-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #e74c3c, #f39c12, #3498db, #2ecc71);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: 4px solid white;
+    transition: all 0.3s ease;
+}
+
+.crisis-phase .timeline-marker {
+    background: #e74c3c;
+}
+
+.exploration-phase .timeline-marker {
+    background: #f39c12;
+}
+
+.transformation-phase .timeline-marker {
+    background: #3498db;
+}
+
+.integration-phase .timeline-marker {
+    background: #2ecc71;
+}
+
+.timeline-marker:hover {
+    transform: translateX(-50%) scale(1.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.timeline-content {
+    background: rgba(44, 62, 80, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 45%;
+    border: 2px solid transparent;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 55%;
+    border-left: 4px solid;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 55%;
+    border-right: 4px solid;
+}
+
+.crisis-phase .timeline-content {
+    border-color: #e74c3c;
+}
+
+.exploration-phase .timeline-content {
+    border-color: #f39c12;
+}
+
+.transformation-phase .timeline-content {
+    border-color: #3498db;
+}
+
+.integration-phase .timeline-content {
+    border-color: #2ecc71;
+}
+
+.timeline-content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.timeline-content h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.crisis-phase h4 {
+    color: #e74c3c;
+}
+
+.exploration-phase h4 {
+    color: #f39c12;
+}
+
+.transformation-phase h4 {
+    color: #3498db;
+}
+
+.integration-phase h4 {
+    color: #2ecc71;
+}
+
+.phase-description {
+    font-size: 1.3rem;
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.phase-details {
+    list-style: none;
+    padding: 0;
+}
+
+.phase-details li {
+    color: #ecf0f1;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.phase-details li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.crisis-phase .phase-details li::before {
+    color: #e74c3c;
+}
+
+.exploration-phase .phase-details li::before {
+    color: #f39c12;
+}
+
+.transformation-phase .phase-details li::before {
+    color: #3498db;
+}
+
+.integration-phase .phase-details li::before {
+    color: #2ecc71;
+}
+
+/* 核心收获区域 */
+.core-gains-section {
+    margin-bottom: 5rem;
+}
+
+.gains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gain-card {
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 25px;
+    padding: 2.5rem;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.gain-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: cardSweep 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes cardSweep {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.gain-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.self-awareness {
+    border-color: rgba(155, 89, 182, 0.3);
+}
+
+.self-awareness:hover {
+    border-color: #9b59b6;
+}
+
+.self-acceptance {
+    border-color: rgba(46, 204, 113, 0.3);
+}
+
+.self-acceptance:hover {
+    border-color: #2ecc71;
+}
+
+.relationship-skills {
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.relationship-skills:hover {
+    border-color: #3498db;
+}
+
+.resilience {
+    border-color: rgba(241, 196, 15, 0.3);
+}
+
+.resilience:hover {
+    border-color: #f1c40f;
+}
+
+.gain-icon {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.gain-card h4 {
+    color: #ecf0f1;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.gain-description {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.gain-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem;
+    background: rgba(44, 62, 80, 0.5);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    background: rgba(44, 62, 80, 0.7);
+    transform: translateX(5px);
+}
+
+.detail-label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.self-awareness .detail-label {
+    color: #9b59b6;
+}
+
+.self-acceptance .detail-label {
+    color: #2ecc71;
+}
+
+.relationship-skills .detail-label {
+    color: #3498db;
+}
+
+.resilience .detail-label {
+    color: #f1c40f;
+}
+
+.detail-text {
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* 未来展望区域 */
+.future-outlook-section {
+    margin-bottom: 5rem;
+}
+
+.outlook-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.vision-card {
+    background: rgba(44, 62, 80, 0.9);
+    border-radius: 25px;
+    padding: 2.5rem;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.vision-card:hover::before {
+    left: 100%;
+}
+
+.vision-card:hover {
+    transform: translateY(-10px);
+    border-color: #3498db;
+    box-shadow: 0 20px 50px rgba(52, 152, 219, 0.2);
+}
+
+.vision-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.vision-icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    animation: visionGlow 3s ease-in-out infinite;
+}
+
+@keyframes visionGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.5));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.8));
+    }
+}
+
+.vision-header h4 {
+    color: #3498db;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.vision-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.goal-item {
+    padding: 1.5rem;
+    background: rgba(52, 73, 94, 0.6);
+    border-radius: 15px;
+    border-left: 4px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.goal-item:hover {
+    background: rgba(52, 73, 94, 0.8);
+    transform: translateX(10px);
+    border-left-color: #2980b9;
+}
+
+.goal-item h5 {
+    color: #3498db;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.8rem 0;
+}
+
+.goal-item p {
+    color: #bdc3c7;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 感恩致谢区域 */
+.gratitude-section {
+    margin-bottom: 4rem;
+}
+
+.gratitude-card {
+    background: rgba(44, 62, 80, 0.9);
+    border-radius: 25px;
+    padding: 3rem;
+    border: 2px solid rgba(241, 196, 15, 0.4);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gratitude-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #f1c40f, #e67e22, #e74c3c, #9b59b6, #3498db, #2ecc71, #f1c40f);
+    background-size: 400% 400%;
+    animation: gratitudeBorder 8s ease infinite;
+    border-radius: 25px;
+    z-index: -1;
+}
+
+@keyframes gratitudeBorder {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.gratitude-icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    animation: gratitudeGlow 3s ease-in-out infinite;
+}
+
+@keyframes gratitudeGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px rgba(241, 196, 15, 0.6));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 25px rgba(241, 196, 15, 0.9));
+    }
+}
+
+.gratitude-text {
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.gratitude-quote {
+    margin-top: 2rem;
+}
+
+.gratitude-quote blockquote {
+    font-size: 1.4rem;
+    color: #f1c40f;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.gratitude-quote blockquote::before,
+.gratitude-quote blockquote::after {
+    content: '"';
+    font-size: 3rem;
+    color: #f39c12;
+    font-weight: bold;
+    position: absolute;
+}
+
+.gratitude-quote blockquote::before {
+    top: -10px;
+    left: -30px;
+}
+
+.gratitude-quote blockquote::after {
+    bottom: -40px;
+    right: -30px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .gains-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .outlook-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .journey-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 60px;
+    }
+    
+    .timeline-marker {
+        left: 30px !important;
+    }
+    
+    .timeline-content {
+        width: 100% !important;
+        margin: 0 !important;
+        border-left: 4px solid !important;
+        border-right: none !important;
+    }
+    
+    .gain-card,
+    .vision-card,
+    .gratitude-card {
+        padding: 2rem;
+    }
+    
+    .gratitude-quote blockquote::before,
+    .gratitude-quote blockquote::after {
+        font-size: 2rem;
+    }
+    
+    .gratitude-quote blockquote::before {
+        left: -20px;
+    }
+    
+    .gratitude-quote blockquote::after {
+        right: -20px;
+    }
+}

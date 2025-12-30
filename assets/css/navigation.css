@@ -1,0 +1,110 @@
+/* 导航控制样式 */
+.nav-controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.nav-btn.home-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.page-counter {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.current-page,
+.total-pages {
+    font-weight: 700;
+    color: #667eea;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 2px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-controls {
+        bottom: 20px;
+        padding: 12px 20px;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .page-counter {
+        font-size: 12px;
+    }
+}
+
+/* 页面指示器点阵 */
+.page-dots {
+    display: flex;
+    gap: 8px;
+    margin: 0 15px;
+}
+
+.page-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-dot.active {
+    background: #667eea;
+    transform: scale(1.2);
+}
+
+.page-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}

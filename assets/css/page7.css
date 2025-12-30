@@ -1,0 +1,627 @@
+/* Page 7 - 互动页②（困境抉择）样式 */
+
+/* 背景SVG动画 */
+.background-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* 路径动画 */
+.choice-path {
+    stroke-dasharray: 20 10;
+    animation: pathFlow 4s linear infinite;
+}
+
+.left-path {
+    animation-delay: 0s;
+}
+
+.center-path {
+    animation-delay: 1s;
+}
+
+.right-path {
+    animation-delay: 2s;
+}
+
+@keyframes pathFlow {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -30;
+        opacity: 0.7;
+    }
+}
+
+/* 选择节点动画 */
+.choice-node {
+    animation: nodeGlow 3s ease-in-out infinite;
+}
+
+.left-node {
+    animation-delay: 0s;
+}
+
+.center-node {
+    animation-delay: 1s;
+}
+
+.right-node {
+    animation-delay: 2s;
+}
+
+@keyframes nodeGlow {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* 装饰元素动画 */
+.decoration {
+    animation: decorationFloat 6s ease-in-out infinite;
+}
+
+.decoration:nth-child(1) { animation-delay: 0s; }
+.decoration:nth-child(2) { animation-delay: 1s; }
+.decoration:nth-child(3) { animation-delay: 2s; }
+.decoration:nth-child(4) { animation-delay: 3s; }
+.decoration:nth-child(5) { animation-delay: 4s; }
+
+@keyframes decorationFloat {
+    0%, 100% {
+        opacity: 0.6;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+}
+
+/* 光环动画 */
+.aura {
+    animation: auraExpand 4s ease-in-out infinite;
+}
+
+.left-aura {
+    animation-delay: 0s;
+}
+
+.center-aura {
+    animation-delay: 1.3s;
+}
+
+.right-aura {
+    animation-delay: 2.6s;
+}
+
+@keyframes auraExpand {
+    0%, 100% {
+        r: 50;
+        opacity: 0.3;
+    }
+    50% {
+        r: 80;
+        opacity: 0.1;
+    }
+}
+
+/* 页面头部 */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(231, 76, 60, 0.8), 0 0 40px rgba(231, 76, 60, 0.3);
+    }
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #f39c12;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #bdc3c7;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* 情境描述 */
+.scenario-section {
+    margin-bottom: 4rem;
+}
+
+.scenario-card {
+    background: rgba(44, 62, 80, 0.8);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid rgba(231, 76, 60, 0.3);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.scenario-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(231, 76, 60, 0.6);
+    box-shadow: 0 20px 50px rgba(231, 76, 60, 0.2);
+}
+
+.scenario-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.scenario-card h3 {
+    font-size: 2rem;
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.scenario-description {
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 选择区域 */
+.choices-section {
+    margin-bottom: 4rem;
+}
+
+.choices-title {
+    font-size: 2.5rem;
+    color: #f39c12;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.choices-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 选择卡片 */
+.choice-card {
+    background: rgba(52, 73, 94, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.choice-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.choice-card:hover::before {
+    left: 100%;
+}
+
+.choice-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--choice-color, #3498db);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.choice-card[data-choice="family"] {
+    --choice-color: #f39c12;
+}
+
+.choice-card[data-choice="dream"] {
+    --choice-color: #9b59b6;
+}
+
+.choice-card[data-choice="explore"] {
+    --choice-color: #27ae60;
+}
+
+.choice-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.choice-icon {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.choice-card:hover .choice-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.choice-header h4 {
+    font-size: 1.4rem;
+    color: #ecf0f1;
+    font-weight: 600;
+    margin: 0;
+}
+
+.choice-content {
+    margin-bottom: 2rem;
+}
+
+.choice-description {
+    color: #bdc3c7;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.choice-traits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.trait {
+    background: rgba(255,255,255,0.1);
+    color: #ecf0f1;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.choice-card:hover .trait {
+    background: var(--choice-color, #3498db);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 选择按钮 */
+.choice-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--choice-color, #3498db), rgba(255,255,255,0.1));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.choice-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%);
+}
+
+.choice-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.choice-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.choice-btn:active {
+    transform: translateY(0);
+}
+
+/* 结果展示 */
+.result-section {
+    margin-bottom: 4rem;
+    animation: resultFadeIn 0.8s ease-out;
+}
+
+@keyframes resultFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-card {
+    background: rgba(44, 62, 80, 0.95);
+    border-radius: 25px;
+    padding: 3rem;
+    border: 2px solid #e74c3c;
+    backdrop-filter: blur(20px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: resultIconSpin 2s ease-in-out infinite;
+}
+
+@keyframes resultIconSpin {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+}
+
+.result-header h3 {
+    font-size: 2.2rem;
+    color: #e74c3c;
+    margin: 0;
+    font-weight: 600;
+}
+
+.result-description {
+    font-size: 1.4rem;
+    color: #ecf0f1;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.psychological-analysis,
+.growth-suggestion {
+    margin-bottom: 2rem;
+}
+
+.psychological-analysis h4,
+.growth-suggestion h4 {
+    font-size: 1.4rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.psychology-insight,
+.growth-advice {
+    background: rgba(52, 73, 94, 0.6);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 4px solid #9b59b6;
+}
+
+.psychology-insight p,
+.growth-advice p {
+    color: #bdc3c7;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.psychology-insight ul,
+.growth-advice ul {
+    color: #95a5a6;
+    padding-left: 1.5rem;
+}
+
+.psychology-insight li,
+.growth-advice li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* 结果操作按钮 */
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.retry-btn,
+.continue-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retry-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.continue-btn {
+    background: linear-gradient(135deg, #27ae60, #229954);
+    color: white;
+}
+
+.retry-btn:hover,
+.continue-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 反思区域 */
+.reflection-section {
+    margin-bottom: 4rem;
+}
+
+.reflection-card {
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid rgba(155, 89, 182, 0.3);
+    backdrop-filter: blur(20px);
+}
+
+.reflection-card h3 {
+    font-size: 2rem;
+    color: #9b59b6;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.reflection-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.question-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(44, 62, 80, 0.6);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    transform: translateX(10px);
+    background: rgba(44, 62, 80, 0.8);
+    border-left: 4px solid #9b59b6;
+}
+
+.question-number {
+    background: #9b59b6;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.question-item p {
+    color: #ecf0f1;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* 选中状态 */
+.choice-card.selected {
+    border-color: var(--choice-color, #3498db);
+    background: rgba(var(--choice-rgb, 52, 152, 219), 0.1);
+    transform: translateY(-10px) scale(1.02);
+}
+
+.choice-card.selected .choice-btn {
+    background: var(--choice-color, #3498db);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .choices-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .choice-card {
+        padding: 1.5rem;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .result-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .retry-btn,
+    .continue-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}

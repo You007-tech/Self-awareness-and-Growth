@@ -1,0 +1,787 @@
+/* Page 10 - 总结与结束页样式 */
+
+/* 背景SVG动画 */
+.background-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+}
+
+/* 完成圆环动画 */
+.completion-circle .outer-circle {
+    animation: rotateClockwise 20s linear infinite;
+    transform-origin: center;
+}
+
+.completion-circle .middle-circle {
+    animation: rotateCounterClockwise 15s linear infinite;
+    transform-origin: center;
+}
+
+.completion-circle .inner-circle {
+    animation: rotateClockwise 10s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotateClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+/* 成就星星动画 */
+.achievement-stars .star {
+    animation: starTwinkle 3s ease-in-out infinite;
+}
+
+.achievement-stars .star:nth-child(1) { animation-delay: 0s; }
+.achievement-stars .star:nth-child(2) { animation-delay: 0.6s; }
+.achievement-stars .star:nth-child(3) { animation-delay: 1.2s; }
+.achievement-stars .star:nth-child(4) { animation-delay: 1.8s; }
+.achievement-stars .star:nth-child(5) { animation-delay: 2.4s; }
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* 庆祝烟花动画 */
+.celebration-fireworks .firework {
+    animation: fireworkBurst 4s ease-out infinite;
+}
+
+.celebration-fireworks .firework:nth-child(1) { animation-delay: 0s; }
+.celebration-fireworks .firework:nth-child(2) { animation-delay: 1s; }
+.celebration-fireworks .firework:nth-child(3) { animation-delay: 2s; }
+.celebration-fireworks .firework:nth-child(4) { animation-delay: 3s; }
+
+@keyframes fireworkBurst {
+    0% { opacity: 0; transform: scale(0); }
+    20% { opacity: 1; transform: scale(1); }
+    80% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+/* 旅程路径动画 */
+.journey-path .path-line {
+    stroke-dasharray: 20 10;
+    animation: pathFlow 8s linear infinite;
+}
+
+.journey-path .path-point {
+    animation: pointPulse 2s ease-in-out infinite;
+}
+
+.journey-path .path-point.start {
+    animation: startPointGlow 3s ease-in-out infinite;
+}
+
+.journey-path .path-point.end {
+    animation: endPointCelebrate 2s ease-in-out infinite;
+}
+
+@keyframes pathFlow {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 30; }
+}
+
+@keyframes pointPulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes startPointGlow {
+    0%, 100% { opacity: 0.8; transform: scale(1); box-shadow: 0 0 10px #e74c3c; }
+    50% { opacity: 1; transform: scale(1.5); box-shadow: 0 0 20px #e74c3c; }
+}
+
+@keyframes endPointCelebrate {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    25% { opacity: 1; transform: scale(1.4) rotate(90deg); }
+    50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+    75% { opacity: 1; transform: scale(1.4) rotate(270deg); }
+}
+
+/* 感谢花瓣动画 */
+.gratitude-petals .petal {
+    animation: petalFloat 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.gratitude-petals .petal:nth-child(odd) {
+    animation-direction: alternate;
+}
+
+@keyframes petalFloat {
+    0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.9; transform: scale(1.1) rotate(180deg); }
+}
+
+/* 飞舞光点动画 */
+.floating-lights .light {
+    animation: lightFloat 5s ease-in-out infinite;
+}
+
+.floating-lights .light:nth-child(1) { animation-delay: 0s; }
+.floating-lights .light:nth-child(2) { animation-delay: 0.7s; }
+.floating-lights .light:nth-child(3) { animation-delay: 1.4s; }
+.floating-lights .light:nth-child(4) { animation-delay: 2.1s; }
+.floating-lights .light:nth-child(5) { animation-delay: 2.8s; }
+.floating-lights .light:nth-child(6) { animation-delay: 3.5s; }
+.floating-lights .light:nth-child(7) { animation-delay: 4.2s; }
+.floating-lights .light:nth-child(8) { animation-delay: 4.9s; }
+
+@keyframes lightFloat {
+    0%, 100% { opacity: 0.8; transform: translateY(0px) scale(1); }
+    25% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+    50% { opacity: 0.6; transform: translateY(-10px) scale(0.8); }
+    75% { opacity: 1; transform: translateY(-30px) scale(1.1); }
+}
+
+/* 主要内容样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 页面头部 */
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #f1c40f;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #f1c40f, #e67e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: #ecf0f1;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #bdc3c7;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 项目总结部分 */
+.project-summary-section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #e67e22;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #e67e22, #f39c12);
+    border-radius: 2px;
+}
+
+.summary-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.summary-overview, .key-findings {
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 15px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    transition: all 0.3s ease;
+}
+
+.summary-overview:hover, .key-findings:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(241, 196, 15, 0.2);
+    border-color: rgba(241, 196, 15, 0.4);
+}
+
+.overview-icon, .findings-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.summary-overview h4, .key-findings h4 {
+    font-size: 1.8rem;
+    color: #f1c40f;
+    margin-bottom: 1.5rem;
+}
+
+.overview-description {
+    color: #ecf0f1;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.key-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(241, 196, 15, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(241, 196, 15, 0.2);
+}
+
+.metric-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f1c40f;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    color: #bdc3c7;
+    font-size: 0.9rem;
+}
+
+.findings-list {
+    space-y: 1.5rem;
+}
+
+.finding-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(241, 196, 15, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.finding-item:hover {
+    background: rgba(241, 196, 15, 0.1);
+    transform: translateX(5px);
+}
+
+.finding-number {
+    background: linear-gradient(45deg, #e67e22, #f39c12);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.finding-content h5 {
+    color: #f39c12;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.finding-content p {
+    color: #ecf0f1;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* 学术贡献部分 */
+.academic-contribution-section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.contribution-card {
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(155, 89, 182, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contribution-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(155, 89, 182, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.contribution-card:hover::before {
+    left: 100%;
+}
+
+.contribution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
+    border-color: rgba(155, 89, 182, 0.4);
+}
+
+.contribution-card.theoretical {
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+.contribution-card.practical {
+    border-color: rgba(46, 204, 113, 0.2);
+}
+
+.contribution-card.methodological {
+    border-color: rgba(230, 126, 34, 0.2);
+}
+
+.contribution-card.social {
+    border-color: rgba(231, 76, 60, 0.2);
+}
+
+.contribution-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.contribution-card h4 {
+    font-size: 1.5rem;
+    color: #9b59b6;
+    margin-bottom: 1.5rem;
+}
+
+.contribution-points {
+    list-style: none;
+    padding: 0;
+}
+
+.contribution-points li {
+    color: #ecf0f1;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.contribution-points li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: 700;
+}
+
+/* 未来展望部分 */
+.future-research-section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2s forwards;
+}
+
+.research-directions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.direction-card {
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    transition: all 0.3s ease;
+}
+
+.direction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+    border-color: rgba(52, 152, 219, 0.4);
+}
+
+.direction-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.direction-icon {
+    font-size: 2rem;
+}
+
+.direction-header h4 {
+    font-size: 1.4rem;
+    color: #3498db;
+}
+
+.research-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.research-item:hover {
+    background: rgba(52, 152, 219, 0.1);
+    transform: translateX(5px);
+}
+
+.research-item h5 {
+    color: #5dade2;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.research-item p {
+    color: #ecf0f1;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* 致谢部分 */
+.acknowledgments-section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2.5s forwards;
+}
+
+.acknowledgments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.acknowledgment-card {
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 15px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    transition: all 0.3s ease;
+}
+
+.acknowledgment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.4);
+}
+
+.thanks-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.acknowledgment-card h4 {
+    font-size: 2rem;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.thanks-text {
+    color: #ecf0f1;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.thanks-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.thanks-category {
+    padding: 1.5rem;
+    background: rgba(231, 76, 60, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(231, 76, 60, 0.1);
+    transition: all 0.3s ease;
+}
+
+.thanks-category:hover {
+    background: rgba(231, 76, 60, 0.1);
+    border-color: rgba(231, 76, 60, 0.2);
+    transform: scale(1.02);
+}
+
+.thanks-category h5 {
+    color: #ec7063;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.thanks-category p {
+    color: #ecf0f1;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.final-message {
+    background: rgba(52, 73, 94, 0.9);
+    border-radius: 15px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(241, 196, 15, 0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-message::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(241, 196, 15, 0.1), transparent);
+    animation: rotateGlow 8s linear infinite;
+}
+
+.message-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.message-content {
+    position: relative;
+    z-index: 1;
+}
+
+.final-quote {
+    font-size: 1.3rem;
+    color: #f1c40f;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 1rem;
+    border: none;
+    padding: 0;
+}
+
+.quote-author {
+    color: #bdc3c7;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 结束语部分 */
+.conclusion-section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 3s forwards;
+}
+
+.conclusion-card {
+    background: rgba(52, 73, 94, 0.9);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(46, 204, 113, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.conclusion-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(46, 204, 113, 0.1) 0%, 
+        rgba(52, 152, 219, 0.1) 25%, 
+        rgba(155, 89, 182, 0.1) 50%, 
+        rgba(241, 196, 15, 0.1) 75%, 
+        rgba(231, 76, 60, 0.1) 100%);
+    animation: gradientShift 6s ease-in-out infinite;
+}
+
+.conclusion-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    animation: iconGlow 3s ease-in-out infinite;
+}
+
+.conclusion-card h3 {
+    font-size: 2.2rem;
+    color: #2ecc71;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.conclusion-text {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.conclusion-signature {
+    position: relative;
+    z-index: 1;
+}
+
+.conclusion-signature p {
+    font-size: 1.3rem;
+    color: #f39c12;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #bdc3c7;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+@keyframes gradientShift {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes iconGlow {
+    0%, 100% { text-shadow: 0 0 10px rgba(46, 204, 113, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(46, 204, 113, 0.8), 0 0 30px rgba(46, 204, 113, 0.6); }
+}
+
+/* 基础动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .summary-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contribution-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .research-directions {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .thanks-categories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .key-metrics {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .summary-overview, .key-findings,
+    .contribution-card, .direction-card,
+    .acknowledgment-card {
+        padding: 1.5rem;
+    }
+    
+    .conclusion-card {
+        padding: 2rem;
+    }
+}

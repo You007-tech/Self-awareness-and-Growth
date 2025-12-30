@@ -1,0 +1,68 @@
+/* Page 3 - 互动体验② 样式 */
+
+/* Page 3 Specific Styles */
+
+/* 反思区域样式 */
+.reflection-area {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.reflection-area h3 {
+    margin-bottom: 0.8rem;
+}
+
+/* 互动提示区域样式 */
+.interaction-hint {
+    margin-top: 0.5rem;
+}
+
+/* 提示文字样式 - 去掉所有方框样式 */
+.interaction-hint .hint-content {
+    /* 移除所有背景、边框、阴影等方框样式 */
+}
+
+.interaction-hint .hint-text p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    /* 移除所有背景、边框、阴影等方框样式 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .reflection-area {
+        margin-top: 1rem;
+    }
+    
+    .reflection-area h3 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .interaction-hint {
+        margin-top: 0.3rem;
+    }
+    
+    .interaction-hint .hint-text p {
+        font-size: 1rem;
+        margin: 0.3rem 0;
+        color: white;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 767px) {
+    .reflection-area {
+        margin-top: 0.8rem;
+    }
+    
+    .reflection-area h3 {
+        margin-bottom: 0.4rem;
+        font-size: 1.6rem;
+    }
+    
+    .interaction-hint {
+        margin-top: 0.4rem;
+    }
+}

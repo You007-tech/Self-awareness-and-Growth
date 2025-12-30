@@ -1,0 +1,511 @@
+/* Page 4 - 核心困境页样式 */
+
+.container {
+    width: 100vw !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* SVG动画 */
+.mirror-fragments .fragment {
+    animation: fragmentFloat 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.fragment-1 { animation-delay: 0s; }
+.fragment-2 { animation-delay: 1s; }
+.fragment-3 { animation-delay: 2s; }
+.fragment-4 { animation-delay: 3s; }
+.fragment-5 { animation-delay: 4s; }
+
+@keyframes fragmentFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(-1deg); }
+    75% { transform: translateY(-15px) rotate(0.5deg); }
+}
+
+.crack-lines .crack {
+    animation: crackGlow 4s ease-in-out infinite;
+}
+
+.crack-1 { animation-delay: 0s; }
+.crack-2 { animation-delay: 1.5s; }
+.crack-3 { animation-delay: 3s; }
+
+@keyframes crackGlow {
+    0%, 100% { opacity: 0.3; stroke-width: 2px; }
+    50% { opacity: 0.8; stroke-width: 4px; }
+}
+
+.light-effects .light {
+    animation: lightPulse 3s ease-in-out infinite;
+}
+
+.light-1 { animation-delay: 0s; }
+.light-2 { animation-delay: 1s; }
+.light-3 { animation-delay: 2s; }
+
+@keyframes lightPulse {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+/* 内容样式 */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: #ecf0f1;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* 左列 - 困境表现 */
+.problem-description h3 {
+    font-size: 2rem;
+    color: #f39c12;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.problem-list {
+    list-style: none;
+    padding: 0;
+}
+
+.problem-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(52, 73, 94, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid #e74c3c;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.problem-item:nth-child(1) { animation-delay: 0.2s; }
+.problem-item:nth-child(2) { animation-delay: 0.4s; }
+.problem-item:nth-child(3) { animation-delay: 0.6s; }
+
+.problem-item:hover {
+    transform: translateX(10px);
+    background: rgba(52, 73, 94, 0.5);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+}
+
+.problem-item .icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.problem-item .text strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    margin-bottom: 0.5rem;
+}
+
+.problem-item .text p {
+    color: #bdc3c7;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 右列 - 深层影响 */
+.impact-analysis h3 {
+    font-size: 2rem;
+    color: #f39c12;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.impact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.impact-card {
+    padding: 1.5rem;
+    background: rgba(44, 62, 80, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.impact-card:nth-child(1) { animation-delay: 0.3s; }
+.impact-card:nth-child(2) { animation-delay: 0.5s; }
+.impact-card:nth-child(3) { animation-delay: 0.7s; }
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.6);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+}
+
+.card-header h4 {
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    margin: 0;
+}
+
+.impact-card p {
+    color: #bdc3c7;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 引用区域 */
+.quote-section {
+    margin-top: 3rem;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.philosophical-quote {
+    background: rgba(44, 62, 80, 0.6);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #e74c3c;
+    backdrop-filter: blur(15px);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.philosophical-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #e74c3c;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    opacity: 0.5;
+}
+
+.philosophical-quote p {
+    font-size: 1.4rem;
+    color: #ecf0f1;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.philosophical-quote cite {
+    color: #f39c12;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+/* 动画 */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 案例回顾样式 */
+.case-recap {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.05));
+    border-radius: 15px;
+    border-left: 4px solid #e74c3c;
+}
+
+.case-recap h3 {
+    color: #e74c3c;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.case-summary {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ecf0f1;
+    margin: 0;
+}
+
+.case-summary strong {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* 案例示例样式 */
+.case-example {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #3498db;
+}
+
+.case-example em {
+    color: #81d4fa;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 案例连接样式 */
+.case-connection {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 6px;
+    border-left: 2px solid #2ecc71;
+}
+
+.case-connection strong {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+/* 理论过渡样式 */
+.theory-transition {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.05));
+    border-radius: 15px;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.theory-transition h3 {
+    color: #9b59b6;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.transition-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.transition-content strong {
+    color: #9b59b6;
+    font-weight: 600;
+}
+
+.theory-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.preview-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.theory-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.preview-text strong {
+    color: #f39c12;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.preview-text p {
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .case-recap {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .case-recap h3 {
+        font-size: 1.2rem;
+    }
+    
+    .case-summary {
+        font-size: 1rem;
+    }
+    
+    .theory-preview {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .preview-item {
+        padding: 15px;
+    }
+    
+    .theory-transition {
+        padding: 20px;
+        margin: 30px 0;
+    }
+    
+    .theory-transition h3 {
+        font-size: 1.2rem;
+    }
+    
+    .transition-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .problem-item,
+    .impact-card {
+        padding: 1rem;
+    }
+    
+    .philosophical-quote {
+        padding: 1.5rem;
+    }
+    
+    .philosophical-quote p {
+        font-size: 1.2rem;
+    }
+}
