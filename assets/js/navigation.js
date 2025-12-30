@@ -52,6 +52,15 @@ class NavigationController {
 
     // 创建导航UI
     createNavigationUI() {
+       // 确保导航系统正确显示
+setTimeout(() => {
+    const navigation = document.querySelector('.navigation');
+    if (navigation) {
+        navigation.style.display = 'flex';
+        navigation.style.opacity = '1';
+        navigation.style.visibility = 'visible';
+    }
+}, 500);
         // 创建进度条
         const progressBar = document.createElement('div');
         progressBar.className = 'progress-bar';
@@ -295,4 +304,5 @@ document.addEventListener('DOMContentLoaded', () => {
 // 导出供其他模块使用
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = NavigationController;
+
 }
