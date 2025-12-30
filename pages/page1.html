@@ -2,13 +2,15 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>案例引入 - 心理学汇报</title>
     <link rel="stylesheet" href="../assets/css/main.css?v=1">
     <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/mobile-fix.css">
     <script>
         // 调试信息
         console.log('页面1加载完成');
@@ -43,6 +45,169 @@
             window.location.href = '../index.html';
         }
     </script>
+    <style>
+        /* 移动端页面1特定样式 */
+        @media (max-width: 768px) {
+            .centered-layout {
+                width: 100% !important;
+                padding: 20px 0 !important;
+            }
+            
+            .center-content {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 15px !important;
+            }
+            
+            .page-header {
+                margin-bottom: 30px !important;
+            }
+            
+            .page-title {
+                font-size: 28px !important;
+                line-height: 1.3 !important;
+                margin: 15px 0 !important;
+            }
+            
+            .title-underline {
+                width: 80px !important;
+                height: 4px !important;
+                margin: 15px auto !important;
+            }
+            
+            .section-title {
+                font-size: 24px !important;
+                margin-bottom: 25px !important;
+                line-height: 1.4 !important;
+            }
+            
+            .story-content {
+                margin: 25px 0 !important;
+            }
+            
+            .story-text.large-text {
+                font-size: 16px !important;
+                line-height: 1.7 !important;
+                text-align: justify !important;
+                padding: 0 10px !important;
+            }
+            
+            .key-points {
+                margin-top: 35px !important;
+            }
+            
+            .points-grid-2x2 {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                margin-top: 25px !important;
+            }
+            
+            .point-item {
+                padding: 15px !important;
+                margin: 0 10px !important;
+            }
+            
+            .point-icon {
+                font-size: 1.8em !important;
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            .point-text strong {
+                font-size: 1.1em !important;
+                line-height: 1.4 !important;
+            }
+            
+            .point-text span {
+                font-size: 0.95em !important;
+                line-height: 1.4 !important;
+                white-space: normal !important;
+                word-break: break-word !important;
+            }
+            
+            .next-page-preview {
+                margin-top: 35px !important;
+                padding: 15px !important;
+            }
+            
+            .preview-text {
+                font-size: 15px !important;
+                line-height: 1.6 !important;
+            }
+        }
+        
+        /* 超小屏幕手机 */
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 24px !important;
+            }
+            
+            .section-title {
+                font-size: 20px !important;
+            }
+            
+            .story-text.large-text {
+                font-size: 15px !important;
+                line-height: 1.8 !important;
+            }
+            
+            .point-item {
+                padding: 12px !important;
+                margin: 0 5px !important;
+            }
+            
+            .point-icon {
+                font-size: 1.6em !important;
+                width: 45px !important;
+                height: 45px !important;
+            }
+        }
+        
+        /* 横屏模式 */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .centered-layout {
+                padding: 10px 0 !important;
+            }
+            
+            .page-header {
+                margin-bottom: 20px !important;
+            }
+            
+            .page-title {
+                font-size: 22px !important;
+                margin: 10px 0 !important;
+            }
+            
+            .story-content {
+                margin: 15px 0 !important;
+            }
+            
+            .story-text.large-text {
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+            }
+            
+            .key-points {
+                margin-top: 20px !important;
+            }
+            
+            .points-grid-2x2 {
+                gap: 10px !important;
+                margin-top: 15px !important;
+            }
+            
+            .point-item {
+                padding: 10px !important;
+                margin: 0 5px !important;
+            }
+            
+            .point-icon {
+                font-size: 1.5em !important;
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+    </style>
 </head>
 <body class="page1">
     <!-- 页面容器 -->
@@ -407,36 +572,102 @@
             }, 300);
         });
     </script>
-    </div>
-    <!-- 导航按钮 -->
-    <div class="nav-controls">
-        <button class="nav-btn prev-btn" onclick="goToPrevPage()">← 上一页</button>
-        <div class="page-counter">
-            <span class="current-page">2</span>
-            <span class="separator">/</span>
-            <span class="total-pages">11</span>
-        </div>
-        <button class="nav-btn next-btn" onclick="goToNextPage()">下一页 →</button>
-    </div>
     
+    <!-- 移动端适配JavaScript -->
     <script>
-        // 页面加载完成后的调试信息
-        console.log('页面1加载完成，当前URL:', window.location.href);
-        console.log('导航控制器状态:', window.navigationController ? '已加载' : '未加载');
-        
-        // 测试导航功能
-        setTimeout(() => {
-            console.log('延迟测试导航功能...');
-            if(window.navigationController) {
-                console.log('导航控制器可用，当前页面:', window.navigationController.currentPage);
-            } else {
-                console.log('导航控制器仍不可用，尝试重新初始化...');
-                if(typeof NavigationController !== 'undefined') {
-                    window.navigationController = new NavigationController();
-                    console.log('重新初始化完成');
+        // 移动端高度适配
+        window.addEventListener('DOMContentLoaded', function() {
+            // 修复移动端100vh问题
+            function setViewHeight() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+                
+                // 确保页面容器有最小高度
+                const pageContainer = document.querySelector('.page-container');
+                if (pageContainer) {
+                    pageContainer.style.minHeight = window.innerHeight + 'px';
+                }
+                
+                // 确保内容区域高度
+                const contentArea = document.querySelector('.content-area');
+                if (contentArea) {
+                    const navHeight = 100; // 导航条高度
+                    contentArea.style.minHeight = (window.innerHeight - navHeight) + 'px';
+                    contentArea.style.paddingBottom = '80px'; // 给导航留出空间
+                }
+                
+                // 调整居中布局
+                const centeredLayout = document.querySelector('.centered-layout');
+                if (centeredLayout) {
+                    centeredLayout.style.minHeight = (window.innerHeight - 150) + 'px';
+                    centeredLayout.style.display = 'flex';
+                    centeredLayout.style.flexDirection = 'column';
+                    centeredLayout.style.justifyContent = 'center';
                 }
             }
-        }, 1000);
+            
+            setViewHeight();
+            window.addEventListener('resize', setViewHeight);
+            
+            // 调试信息
+            console.log('Page1移动端适配已加载');
+            console.log('屏幕尺寸:', window.innerWidth, 'x', window.innerHeight);
+        });
+
+        // 触摸事件优化
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // 防止双击缩放
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, {passive: false});
+        
+        // 阻止页面下拉刷新
+        let touchStartY = 0;
+        document.addEventListener('touchstart', function(event) {
+            touchStartY = event.touches[0].clientY;
+        }, {passive: true});
+        
+        document.addEventListener('touchmove', function(event) {
+            const touchY = event.touches[0].clientY;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // 如果页面在顶部且向下滑动，阻止下拉刷新
+            if (scrollTop === 0 && touchY > touchStartY) {
+                event.preventDefault();
+            }
+        }, {passive: false});
+        
+        // 页面加载完成后重设导航
+        window.addEventListener('load', function() {
+            if (window.navigationController) {
+                window.navigationController.currentPage = 1;
+                window.navigationController.updateNavigation();
+            }
+            
+            // 确保页面可滚动
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+            
+            // 延迟执行一些调整，确保DOM完全加载
+            setTimeout(function() {
+                // 调整内容区域最小高度
+                const contentArea = document.querySelector('.content-area');
+                if (contentArea) {
+                    const windowHeight = window.innerHeight;
+                    const contentHeight = contentArea.offsetHeight;
+                    
+                    if (contentHeight < windowHeight - 100) {
+                        contentArea.style.minHeight = (windowHeight - 150) + 'px';
+                    }
+                }
+            }, 500);
+        });
     </script>
 </body>
 </html>
