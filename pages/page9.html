@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>整合与成长 - 心理学汇报</title>
+    <link rel="stylesheet" href="../assets/css/main.css?v=20241020112200">
+    <link rel="stylesheet" href="../assets/css/page9.css?v=20241020112200">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../assets/js/navigation.js?v=1"></script>
+</head>
+<body class="page9">
+    <!-- 背景SVG -->
+    <svg class="background-svg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- 渐变定义 -->
+            <radialGradient id="growthGradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" style="stop-color:#ff9a9e;stop-opacity:0.8"/>
+                <stop offset="50%" style="stop-color:#fecfef;stop-opacity:0.4"/>
+                <stop offset="100%" style="stop-color:#ffecd2;stop-opacity:0.1"/>
+            </radialGradient>
+            
+            <linearGradient id="integrationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffeaa7;stop-opacity:0.6"/>
+                <stop offset="50%" style="stop-color:#fab1a0;stop-opacity:0.4"/>
+                <stop offset="100%" style="stop-color:#fd79a8;stop-opacity:0.2"/>
+            </linearGradient>
+            
+            <radialGradient id="wisdomGradient" cx="50%" cy="30%" r="40%">
+                <stop offset="0%" style="stop-color:#fdcb6e;stop-opacity:0.9"/>
+                <stop offset="70%" style="stop-color:#e17055;stop-opacity:0.3"/>
+                <stop offset="100%" style="stop-color:#fd79a8;stop-opacity:0.1"/>
+            </radialGradient>
+        </defs>
+        
+        <!-- 背景基础 -->
+        <rect width="100%" height="100%" fill="url(#growthGradient)"/>
+        
+        <!-- 成长螺旋 -->
+        <g class="growth-spiral">
+            <path d="M 960 900 Q 700 700 800 500 Q 900 300 1100 400 Q 1300 500 1200 300 Q 1100 100 900 200 Q 700 300 800 100" 
+                  stroke="#ff9a9e" stroke-width="8" fill="none" opacity="0.6" class="spiral-path"/>
+            <path d="M 960 900 Q 750 750 850 550 Q 950 350 1150 450 Q 1350 550 1250 350 Q 1150 150 950 250 Q 750 350 850 150" 
+                  stroke="#fab1a0" stroke-width="6" fill="none" opacity="0.4" class="spiral-path"/>
+        </g>
+        
+        <!-- 成长节点 -->
+        <g class="growth-nodes">
+            <circle cx="960" cy="900" r="25" fill="#fd79a8" opacity="0.8" class="growth-node start-node">
+                <title>起点：困境</title>
+            </circle>
+            <circle cx="800" cy="500" r="20" fill="#fdcb6e" opacity="0.8" class="growth-node process-node">
+                <title>过程：探索</title>
+            </circle>
+            <circle cx="1100" cy="400" r="20" fill="#ffeaa7" opacity="0.8" class="growth-node process-node">
+                <title>过程：理解</title>
+            </circle>
+            <circle cx="1200" cy="300" r="20" fill="#fab1a0" opacity="0.8" class="growth-node process-node">
+                <title>过程：转化</title>
+            </circle>
+            <circle cx="900" cy="200" r="30" fill="#ff9a9e" opacity="0.9" class="growth-node end-node">
+                <title>终点：成长</title>
+            </circle>
+        </g>
+        
+        <!-- 整合网络 -->
+        <g class="integration-network">
+            <line x1="200" y1="200" x2="400" y2="150" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+            <line x1="400" y1="150" x2="600" y2="180" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+            <line x1="600" y1="180" x2="800" y2="120" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+            <line x1="300" y1="300" x2="500" y2="280" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+            <line x1="500" y1="280" x2="700" y2="320" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+            <line x1="1520" y1="200" x2="1320" y2="150" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+            <line x1="1320" y1="150" x2="1120" y2="180" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+            <line x1="1420" y1="300" x2="1220" y2="280" stroke="#ffeaa7" stroke-width="3" opacity="0.5" class="network-line"/>
+        </g>
+        
+        <!-- 智慧之光 -->
+        <g class="wisdom-lights">
+            <circle cx="960" cy="150" r="80" fill="url(#wisdomGradient)" class="wisdom-center"/>
+            <circle cx="300" cy="250" r="40" fill="#fdcb6e" opacity="0.6" class="wisdom-point"/>
+            <circle cx="1620" cy="280" r="35" fill="#e17055" opacity="0.5" class="wisdom-point"/>
+            <circle cx="150" cy="450" r="30" fill="#fab1a0" opacity="0.4" class="wisdom-point"/>
+            <circle cx="1770" cy="500" r="25" fill="#fd79a8" opacity="0.3" class="wisdom-point"/>
+        </g>
+        
+        <!-- 成长花朵 -->
+        <g class="growth-flowers">
+            <g class="flower" transform="translate(200,800)">
+                <circle cx="0" cy="0" r="15" fill="#e91e63" opacity="0.7"/>
+                <circle cx="-10" cy="-8" r="8" fill="#f06292" opacity="0.6"/>
+                <circle cx="10" cy="-8" r="8" fill="#f06292" opacity="0.6"/>
+                <circle cx="-8" cy="10" r="8" fill="#f06292" opacity="0.6"/>
+                <circle cx="8" cy="10" r="8" fill="#f06292" opacity="0.6"/>
+            </g>
+            <g class="flower" transform="translate(1720,850)">
+                <circle cx="0" cy="0" r="12" fill="#9c27b0" opacity="0.7"/>
+                <circle cx="-8" cy="-6" r="6" fill="#ba68c8" opacity="0.6"/>
+                <circle cx="8" cy="-6" r="6" fill="#ba68c8" opacity="0.6"/>
+                <circle cx="-6" cy="8" r="6" fill="#ba68c8" opacity="0.6"/>
+                <circle cx="6" cy="8" r="6" fill="#ba68c8" opacity="0.6"/>
+            </g>
+        </g>
+        
+        <!-- 连接线条 -->
+        <g class="connection-lines">
+            <path d="M 960 900 L 900 200" stroke="#ff9a9e" stroke-width="4" opacity="0.3" stroke-dasharray="10 5" class="connection-line"/>
+            <path d="M 200 200 Q 960 400 1720 200" stroke="#ffeaa7" stroke-width="3" opacity="0.4" stroke-dasharray="8 4" class="connection-line"/>
+            <path d="M 300 800 Q 960 600 1620 850" stroke="#fab1a0" stroke-width="3" opacity="0.3" stroke-dasharray="6 3" class="connection-line"/>
+        </g>
+        
+        <!-- 飞舞粒子 -->
+        <g class="floating-particles">
+            <circle cx="400" cy="300" r="3" fill="#fdcb6e" opacity="0.8" class="particle"/>
+            <circle cx="800" cy="250" r="2" fill="#e17055" opacity="0.7" class="particle"/>
+            <circle cx="1200" cy="400" r="4" fill="#ffeaa7" opacity="0.6" class="particle"/>
+            <circle cx="1500" cy="350" r="3" fill="#ff9a9e" opacity="0.8" class="particle"/>
+            <circle cx="600" cy="600" r="2" fill="#fab1a0" opacity="0.7" class="particle"/>
+            <circle cx="1300" cy="700" r="3" fill="#fd79a8" opacity="0.6" class="particle"/>
+        </g>
+    </svg>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 页面头部 -->
+        <header class="page-header">
+            <h1 class="main-title">整合与成长</h1>
+            <h2 class="subtitle">Integration and Growth</h2>
+            <p class="intro-text">
+                经历了深度的自我探索与治疗历程，现在是时候整合所有的收获，
+                展望未来的成长道路，拥抱一个更加完整和谐的自我。
+            </p>
+        </header>
+
+        <!-- 成长历程回顾 -->
+        <section class="growth-journey-section">
+            <h3 class="section-title">成长历程回顾</h3>
+            <div class="journey-timeline">
+                <div class="timeline-item crisis-phase">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>危机阶段</h4>
+                        <p class="phase-description">自我同一性的撕裂与困惑</p>
+                        <ul class="phase-details">
+                            <li>身份认同的模糊与冲突</li>
+                            <li>内在价值观的混乱</li>
+                            <li>人际关系的疏离感</li>
+                            <li>对未来方向的迷茫</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item exploration-phase">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>探索阶段</h4>
+                        <p class="phase-description">理论指导下的深度自我探索</p>
+                        <ul class="phase-details">
+                            <li>运用罗杰斯人本主义理论</li>
+                            <li>结合埃里克森发展理论</li>
+                            <li>进行系统的心理治疗</li>
+                            <li>建立支持性人际网络</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item transformation-phase">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>转化阶段</h4>
+                        <p class="phase-description">突破与重构的关键时期</p>
+                        <ul class="phase-details">
+                            <li>认知模式的重新建构</li>
+                            <li>行为模式的积极调整</li>
+                            <li>情绪调节能力的提升</li>
+                            <li>自我接纳水平的增强</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item integration-phase">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>整合阶段</h4>
+                        <p class="phase-description">各个层面的协调统一</p>
+                        <ul class="phase-details">
+                            <li>内在自我的和谐统一</li>
+                            <li>理想与现实的平衡</li>
+                            <li>过去、现在与未来的连接</li>
+                            <li>个人成长与社会适应的结合</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心收获 -->
+        <section class="core-gains-section">
+            <h3 class="section-title">核心收获与领悟</h3>
+            <div class="gains-grid">
+                <div class="gain-card self-awareness">
+                    <div class="gain-icon">🧠</div>
+                    <h4>自我觉察的深化</h4>
+                    <div class="gain-content">
+                        <p class="gain-description">
+                            通过深度的内省和治疗过程，我学会了更好地觉察自己的情绪、思维模式和行为习惯。
+                        </p>
+                        <div class="gain-details">
+                            <div class="detail-item">
+                                <span class="detail-label">情绪觉察：</span>
+                                <span class="detail-text">能够及时识别和命名复杂情绪</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">思维觉察：</span>
+                                <span class="detail-text">发现并调整消极的思维模式</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">行为觉察：</span>
+                                <span class="detail-text">理解行为背后的深层动机</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gain-card self-acceptance">
+                    <div class="gain-icon">💚</div>
+                    <h4>自我接纳的提升</h4>
+                    <div class="gain-content">
+                        <p class="gain-description">
+                            学会了以更加宽容和理解的态度对待自己，接纳自己的不完美和局限性。
+                        </p>
+                        <div class="gain-details">
+                            <div class="detail-item">
+                                <span class="detail-label">优势接纳：</span>
+                                <span class="detail-text">认识并珍视自己的独特才能</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">缺陷接纳：</span>
+                                <span class="detail-text">以成长心态面对个人局限</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">过程接纳：</span>
+                                <span class="detail-text">理解成长是一个持续的过程</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gain-card relationship-skills">
+                    <div class="gain-icon">🤝</div>
+                    <h4>关系能力的增强</h4>
+                    <div class="gain-content">
+                        <p class="gain-description">
+                            在人际关系中变得更加真诚、开放，能够建立更深层次的情感连接。
+                        </p>
+                        <div class="gain-details">
+                            <div class="detail-item">
+                                <span class="detail-label">沟通技巧：</span>
+                                <span class="detail-text">学会表达真实感受和需求</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">边界设定：</span>
+                                <span class="detail-text">在关系中保持健康的界限</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">共情能力：</span>
+                                <span class="detail-text">更好地理解和回应他人情感</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gain-card resilience">
+                    <div class="gain-icon">🌱</div>
+                    <h4>心理韧性的建立</h4>
+                    <div class="gain-content">
+                        <p class="gain-description">
+                            面对挫折和挑战时，拥有了更强的恢复力和适应能力。
+                        </p>
+                        <div class="gain-details">
+                            <div class="detail-item">
+                                <span class="detail-label">压力管理：</span>
+                                <span class="detail-text">掌握有效的压力应对策略</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">情绪调节：</span>
+                                <span class="detail-text">能够平衡和调节情绪状态</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">意义建构：</span>
+                                <span class="detail-text">从困难中寻找成长的意义</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 未来展望 -->
+        <section class="future-outlook-section">
+            <h3 class="section-title">未来成长展望</h3>
+            <div class="outlook-container">
+                <div class="vision-card">
+                    <div class="vision-header">
+                        <div class="vision-icon">🎯</div>
+                        <h4>短期目标（1年内）</h4>
+                    </div>
+                    <div class="vision-content">
+                        <div class="goal-item">
+                            <h5>深化自我实现</h5>
+                            <p>继续探索个人兴趣和才能，在学业和职业发展中找到更清晰的方向。</p>
+                        </div>
+                        <div class="goal-item">
+                            <h5>建立稳定关系</h5>
+                            <p>培养更深层次的友谊和亲密关系，建立可靠的社会支持网络。</p>
+                        </div>
+                        <div class="goal-item">
+                            <h5>保持心理健康</h5>
+                            <p>继续运用学到的心理调节技巧，维持良好的心理状态。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vision-card">
+                    <div class="vision-header">
+                        <div class="vision-icon">🚀</div>
+                        <h4>中期愿景（3-5年）</h4>
+                    </div>
+                    <div class="vision-content">
+                        <div class="goal-item">
+                            <h5>专业发展</h5>
+                            <p>在选定的专业领域中建立专业能力，成为有价值的贡献者。</p>
+                        </div>
+                        <div class="goal-item">
+                            <h5>生活平衡</h5>
+                            <p>在工作、学习、人际关系和个人兴趣之间找到和谐的平衡。</p>
+                        </div>
+                        <div class="goal-item">
+                            <h5>助人成长</h5>
+                            <p>运用自己的成长经验，帮助其他面临类似困境的人。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vision-card">
+                    <div class="vision-header">
+                        <div class="vision-icon">🌟</div>
+                        <h4>长期理想（人生愿景）</h4>
+                    </div>
+                    <div class="vision-content">
+                        <div class="goal-item">
+                            <h5>自我实现</h5>
+                            <p>成为一个真正的自己，在个人价值观指导下过有意义的生活。</p>
+                        </div>
+                        <div class="goal-item">
+                            <h5>社会贡献</h5>
+                            <p>通过自己的专业能力和人生智慧，为社会做出积极的贡献。</p>
+                        </div>
+                        <div class="goal-item">
+                            <h5>持续成长</h5>
+                            <p>保持开放和学习的心态，在人生的各个阶段都能持续成长。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 感恩与致谢 -->
+        <section class="gratitude-section">
+            <h3 class="section-title">感恩与致谢</h3>
+            <div class="gratitude-card">
+                <div class="gratitude-icon">🙏</div>
+                <div class="gratitude-content">
+                    <p class="gratitude-text">
+                        这段成长历程中，我深深感谢所有给予我支持和帮助的人。
+                        感谢心理咨询师的专业指导，感谢家人朋友的理解和陪伴，
+                        也感谢那个勇敢面对困境、坚持成长的自己。
+                    </p>
+                    <div class="gratitude-quote">
+                        <blockquote>
+                            "成长不是一个人的旅程，而是在关系中、在爱中、在理解中完成的蜕变。
+                            每一个支持我的人，都是我生命中的光。"
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" onclick="window.location.href='page8.html'">← 上一页</button>
+        <div class="page-counter">
+            <span class="current-page">10</span>
+            <span class="separator">/</span>
+            <span class="total-pages">11</span>
+        </div>
+        <button class="nav-btn next-btn" onclick="window.location.href='page10.html'">下一页 →</button>
+    </div>
+
+    <!-- 进度指示器 -->
+    <div class="progress-indicator">
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 90%;"></div>
+        </div>
+        <span class="progress-text">9/10</span>
+    </div>
+
+    <!-- 脚本文件 -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/page9.js"></script>
+</body>
+</html>

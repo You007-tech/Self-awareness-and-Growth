@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>理论框架 - 卡尔·罗杰斯人本主义</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/page5.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../assets/js/navigation.js?v=1"></script>
+</head>
+<body>
+    <!-- 页面容器 -->
+    <div class="page-container" id="page5">
+        <!-- SVG背景 - 人本主义象征 -->
+        <svg class="background-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <radialGradient id="humanisticGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#34495e;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+                </radialGradient>
+                <linearGradient id="warmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f39c12;stop-opacity:0.8" />
+                    <stop offset="50%" style="stop-color:#e67e22;stop-opacity:0.6" />
+                    <stop offset="100%" style="stop-color:#d35400;stop-opacity:0.4" />
+                </linearGradient>
+                <filter id="softGlow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- 背景 -->
+            <rect width="100%" height="100%" fill="url(#humanisticGradient)"/>
+            
+            <!-- 中心人形轮廓 -->
+            <g class="human-silhouette">
+                <ellipse cx="600" cy="200" rx="60" ry="80" fill="url(#warmGradient)" opacity="0.7" class="head"/>
+                <rect x="570" y="280" width="60" height="120" rx="30" fill="url(#warmGradient)" opacity="0.6" class="body"/>
+                <ellipse cx="540" cy="350" rx="15" ry="40" fill="url(#warmGradient)" opacity="0.5" class="left-arm"/>
+                <ellipse cx="660" cy="350" rx="15" ry="40" fill="url(#warmGradient)" opacity="0.5" class="right-arm"/>
+                <ellipse cx="585" cy="450" rx="12" ry="50" fill="url(#warmGradient)" opacity="0.5" class="left-leg"/>
+                <ellipse cx="615" cy="450" rx="12" ry="50" fill="url(#warmGradient)" opacity="0.5" class="right-leg"/>
+            </g>
+            
+            <!-- 围绕的光环 -->
+            <g class="aura-rings">
+                <circle cx="600" cy="350" r="150" fill="none" stroke="#f39c12" stroke-width="2" opacity="0.4" class="ring ring-1"/>
+                <circle cx="600" cy="350" r="200" fill="none" stroke="#e67e22" stroke-width="1.5" opacity="0.3" class="ring ring-2"/>
+                <circle cx="600" cy="350" r="250" fill="none" stroke="#d35400" stroke-width="1" opacity="0.2" class="ring ring-3"/>
+            </g>
+            
+            <!-- 理论要素符号 -->
+            <g class="theory-symbols">
+                <!-- 无条件积极关注 -->
+                <g class="symbol symbol-1" transform="translate(200,200)">
+                    <circle cx="0" cy="0" r="25" fill="#e74c3c" opacity="0.7" filter="url(#softGlow)"/>
+                    <path d="M-10,-5 L0,5 L10,-5" stroke="#fff" stroke-width="3" fill="none"/>
+                </g>
+                
+                <!-- 真诚一致 -->
+                <g class="symbol symbol-2" transform="translate(1000,200)">
+                    <rect x="-20" y="-20" width="40" height="40" fill="#27ae60" opacity="0.7" filter="url(#softGlow)"/>
+                    <circle cx="0" cy="0" r="8" fill="#fff"/>
+                </g>
+                
+                <!-- 共情理解 -->
+                <g class="symbol symbol-3" transform="translate(200,500)">
+                    <polygon points="-20,15 0,-15 20,15" fill="#3498db" opacity="0.7" filter="url(#softGlow)"/>
+                    <circle cx="0" cy="5" r="5" fill="#fff"/>
+                </g>
+                
+                <!-- 自我实现 -->
+                <g class="symbol symbol-4" transform="translate(1000,500)">
+                    <path d="M-15,-15 L15,-15 L10,0 L15,15 L-15,15 L-10,0 Z" fill="#9b59b6" opacity="0.7" filter="url(#softGlow)"/>
+                    <path d="M-8,-8 L8,8 M8,-8 L-8,8" stroke="#fff" stroke-width="2"/>
+                </g>
+            </g>
+            
+            <!-- 连接线 -->
+            <g class="connection-lines">
+                <path d="M225,225 Q400,300 575,325" stroke="#f39c12" stroke-width="2" fill="none" opacity="0.5" class="line line-1"/>
+                <path d="M975,225 Q800,300 625,325" stroke="#f39c12" stroke-width="2" fill="none" opacity="0.5" class="line line-2"/>
+                <path d="M225,475 Q400,400 575,375" stroke="#f39c12" stroke-width="2" fill="none" opacity="0.5" class="line line-3"/>
+                <path d="M975,475 Q800,400 625,375" stroke="#f39c12" stroke-width="2" fill="none" opacity="0.5" class="line line-4"/>
+            </g>
+    </svg>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- 从案例到理论的过渡 -->
+            <div class="case-to-theory-bridge">
+                <h2>从高远的困境看理论指导</h2>
+                <p class="bridge-text">
+                    高远的自我同一性撕裂问题，需要我们运用<strong>卡尔·罗杰斯的人格自我理论</strong>来深入分析。
+                    这一理论能够帮助我们理解高远内心冲突的根源，并为解决问题提供科学指导。
+                </p>
+            </div>
+
+            <header class="page-header">
+                <div class="theorist-info">
+                    <div class="portrait-placeholder">
+                        <div class="portrait-icon">👨‍🔬</div>
+                    </div>
+                    <div class="theorist-details">
+                        <h1 class="theorist-name">卡尔·罗杰斯</h1>
+                        <p class="theorist-title">人本主义心理学创始人</p>
+                        <p class="life-span">1902-1987</p>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <div class="theory-overview">
+                    <h2 class="section-title">人格的自我理论</h2>
+                    <div class="theory-description">
+                        <p class="main-quote">
+                            "个体是完整的有机体的存在，是一切体验的发源地，且在自我实现倾向的驱使下成长与发展。"
+                        </p>
+                        <div class="theory-essence">
+                            <h3>理论核心与高远案例的关联</h3>
+                            <p>关于自我的理论是罗杰斯人格理论的核心。自我理论的发展、扩充及实现是个体成长的根本目标。</p>
+                            
+                            <div class="case-application-section">
+                                <h4>自我概念与经验的冲突</h4>
+                                <div class="theory-case-pair">
+                                    <div class="theory-part">
+                                        <p><strong>理论要点：</strong>"自我概念"和"经验"是罗杰斯人格理论中的两个重要概念。人格由"经验"和"自我概念"构成，当两者协调一致时，个体便是整合的、真实而适应的人。</p>
+                                    </div>
+                                    <div class="case-part">
+                                        <p><strong>高远案例体现：</strong>高远的"自我概念"（想成为飞行员）与"经验"（被迫学医）严重不一致，导致内心冲突和痛苦。他无法整合这两个相互矛盾的部分，形成了分裂的人格状态。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="case-application-section">
+                                <h4>真实自我与理想自我的分离</h4>
+                                <div class="theory-case-pair">
+                                    <div class="theory-part">
+                                        <p><strong>理论要点：</strong>自我概念有两种：真实的自我是较符合现实的自我形象；理想的自我是一个人期望实现的自我形象。这两种自我是否和谐与趋近，直接影响心理健康的质量。</p>
+                                    </div>
+                                    <div class="case-part">
+                                        <p><strong>高远案例体现：</strong>高远的真实自我（对飞行的热爱和天赋）与理想自我（成为飞行员）本来是一致的，但外界压力迫使他接受了一个虚假的理想自我（成为医生），造成了严重的自我分裂。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="case-application-section">
+                                <h4>自我概念的形成过程</h4>
+                                <div class="theory-case-pair">
+                                    <div class="theory-part">
+                                        <p><strong>理论要点：</strong>自我概念是在个体与环境相互作用的过程中形成的。儿童从最初的物我不分、主客不分，到逐渐把自我与环境区分开来，并在语言的帮助下进一步分清了主我（I）和客我（me）。</p>
+                                    </div>
+                                    <div class="case-part">
+                                        <p><strong>高远案例体现：</strong>高远在成长过程中，家庭环境（特别是哥哥的离世）对他的自我概念形成产生了重大影响。parents期望成为了外在的价值条件，干扰了他自然的自我发展过程。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="core-concepts">
+                    <h2 class="section-title">三大核心条件在高远案例中的应用</h2>
+                    <div class="concepts-grid">
+                        <div class="concept-card" data-concept="unconditional">
+                            <div class="concept-icon">❤️</div>
+                            <h3>无条件积极关注</h3>
+                            <p>自我发展机制的核心，是一种没有价值条件的积极关注体验</p>
+                            <div class="concept-details">
+                                <h4>理论要点：</h4>
+                                <ul>
+                                    <li>在婴幼儿时期得到无条件积极关注是自我发展的基本必需品</li>
+                                    <li>即使行为不够理想时，仍感受到真正的尊重、理解和关怀</li>
+                                    <li>消除防御行为的需要，实现自我与现实知觉的一致</li>
+                                </ul>
+                                <div class="case-analysis">
+                                    <h4>高远案例分析：</h4>
+                                    <p><strong>问题表现：</strong>高远缺乏无条件积极关注。父母的爱是有条件的——只有当他选择医学专业时才能获得认可。</p>
+                                    <p><strong>解决方向：</strong>班主任的开导体现了无条件积极关注，帮助高远母亲意识到应该尊重儿子的真实想法，而不是强加条件。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-card" data-concept="genuineness">
+                            <div class="concept-icon">🎯</div>
+                            <h3>真诚一致</h3>
+                            <p>保持内在体验与外在表达的一致性，展现真实的自我</p>
+                            <div class="concept-details">
+                                <h4>理论要点：</h4>
+                                <ul>
+                                    <li>内心感受与外在行为保持一致</li>
+                                    <li>避免虚假的专业面具</li>
+                                    <li>在关系中保持透明和开放</li>
+                                </ul>
+                                <div class="case-analysis">
+                                    <h4>高远案例分析：</h4>
+                                    <p><strong>问题表现：</strong>高远缺乏真诚一致。他表面上接受医学专业，内心却痛苦抗拒，这种不一致导致了严重的心理问题。</p>
+                                    <p><strong>解决方向：</strong>需要帮助高远学会真诚地表达自己的想法和感受，不再隐藏真实的自我。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-card" data-concept="empathy">
+                            <div class="concept-icon">🤝</div>
+                            <h3>共情理解</h3>
+                            <p>深入理解个体的内心世界，感受其情感体验</p>
+                            <div class="concept-details">
+                                <h4>理论要点：</h4>
+                                <ul>
+                                    <li>准确感知个体的情感状态</li>
+                                    <li>理解其主观体验的意义</li>
+                                    <li>将理解传达给个体</li>
+                                </ul>
+                                <div class="case-analysis">
+                                    <h4>高远案例分析：</h4>
+                                    <p><strong>问题表现：</strong>高远缺乏来自家人的共情理解。父母没有真正理解他对飞行的热爱和对医学的抗拒。</p>
+                                    <p><strong>解决方向：</strong>班主任展现了共情理解，真正理解了高远的内心世界，并帮助母亲也学会共情。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="application-relevance">
+                    <h2 class="section-title">机能健全的人——高远的成长目标</h2>
+                    <div class="relevance-content">
+                        <div class="goal-introduction">
+                            <p>根据罗杰斯理论，高远需要发展成为"机能健全的人"，这是心理健康的理想状态：</p>
+                        </div>
+                        <div class="relevance-item">
+                            <div class="relevance-icon">🌐</div>
+                            <div class="relevance-text">
+                                <h4>经验的开放性</h4>
+                                <p>对一切经验采取开放态度，个体毫无拘束地体验所有的情感和经验</p>
+                                <div class="case-goal">
+                                    <strong>高远的成长目标：</strong>学会开放地面对自己的真实感受，不再压抑对飞行的热爱或对医学的抗拒
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relevance-item">
+                            <div class="relevance-icon">⏰</div>
+                            <div class="relevance-text">
+                                <h4>存在主义的生活方式</h4>
+                                <p>对生活有着清新感，生活于存在的每一瞬间，充分体验当下的生活</p>
+                                <div class="case-goal">
+                                    <strong>高远的成长目标：</strong>不再被过去的创伤或未来的担忧束缚，专注于当下的选择和体验
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relevance-item">
+                            <div class="relevance-icon">🧠</div>
+                            <div class="relevance-text">
+                                <h4>信任自己的机体</h4>
+                                <p>健康的人格犹如程序化的计算机，考虑问题全面，能对行动过程迅速做出决定</p>
+                                <div class="case-goal">
+                                    <strong>高远的成长目标：</strong>学会信任自己的内在智慧，相信自己有能力做出正确的人生选择
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relevance-item">
+                            <div class="relevance-icon">🕊️</div>
+                            <div class="relevance-text">
+                                <h4>富有自由感</h4>
+                                <p>机能健全的人是"意志自由"的人，决定出自个人意愿，享受生活的个人权力感</p>
+                                <div class="case-goal">
+                                    <strong>高远的成长目标：</strong>获得真正的自由感，能够根据自己的价值观和兴趣做出人生选择
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relevance-item">
+                            <div class="relevance-icon">🎨</div>
+                            <div class="relevance-text">
+                                <h4>高度创造力</h4>
+                                <p>富有创造和创新能力，而不是遵循或消极适应社会和文化传统</p>
+                                <div class="case-goal">
+                                    <strong>高远的成长目标：</strong>发挥自己的创造潜能，在飞行领域实现自我价值和社会贡献
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- 导航控制 -->
+        <div class="navigation-controls">
+            <button class="nav-btn prev-btn" onclick="NavigationController.prevPage()">
+                <span>←</span>
+            </button>
+            <div class="page-indicator">
+                <span class="current-page">5</span>
+                <span class="total-pages">/ 10</span>
+            </div>
+            <button class="nav-btn next-btn" onclick="NavigationController.nextPage()">
+                <span>→</span>
+            </button>
+        </div>
+
+            <!-- 进度条 -->
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/page5.js"></script>
+    </div>
+    <!-- 导航按钮 -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" onclick="window.location.href='page4.html'">← 上一页</button>
+        <div class="page-counter">
+            <span class="current-page">6</span>
+            <span class="separator">/</span>
+            <span class="total-pages">11</span>
+        </div>
+        <button class="nav-btn next-btn" onclick="window.location.href='page6.html'">下一页 →</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>理论契合 - 埃里克森心理社会发展理论</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/page6.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../assets/js/navigation.js?v=1"></script>
+</head>
+<body class="page6">
+    <!-- 页面容器 -->
+    <div class="page-container" id="page6">
+        <!-- SVG背景 - 发展螺旋 -->
+        <svg class="background-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <radialGradient id="developmentGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#34495e;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+                </radialGradient>
+                <linearGradient id="stageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:0.8" />
+                    <stop offset="50%" style="stop-color:#8e44ad;stop-opacity:0.6" />
+                    <stop offset="100%" style="stop-color:#663399;stop-opacity:0.4" />
+                </linearGradient>
+                <filter id="stageGlow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- 背景 -->
+            <rect width="100%" height="100%" fill="url(#developmentGradient)"/>
+            
+            <!-- 发展螺旋 -->
+            <g class="development-spiral">
+                <path class="spiral-path" d="M 600 100 Q 700 200 600 300 Q 500 400 600 500 Q 700 600 600 700" 
+                      fill="none" stroke="url(#stageGradient)" stroke-width="3" opacity="0.6"/>
+            </g>
+            
+            <!-- 发展阶段节点 -->
+            <g class="stage-nodes">
+                <circle class="stage-node node-1" cx="600" cy="150" r="15" fill="#e74c3c" opacity="0.8"/>
+                <circle class="stage-node node-2" cx="650" cy="250" r="15" fill="#f39c12" opacity="0.8"/>
+                <circle class="stage-node node-3" cx="600" cy="350" r="15" fill="#27ae60" opacity="0.8"/>
+                <circle class="stage-node node-4" cx="550" cy="450" r="15" fill="#3498db" opacity="0.8"/>
+                <circle class="stage-node node-5" cx="600" cy="550" r="15" fill="#9b59b6" opacity="0.8"/>
+            </g>
+            
+            <!-- 连接网络 -->
+            <g class="connection-web">
+                <line class="connection" x1="200" y1="200" x2="400" y2="300" stroke="#f39c12" stroke-width="1" opacity="0.4"/>
+                <line class="connection" x1="800" y1="250" x2="1000" y2="350" stroke="#e67e22" stroke-width="1" opacity="0.4"/>
+                <line class="connection" x1="150" y1="400" x2="350" y2="500" stroke="#3498db" stroke-width="1" opacity="0.4"/>
+                <line class="connection" x1="850" y1="450" x2="1050" y2="550" stroke="#9b59b6" stroke-width="1" opacity="0.4"/>
+            </g>
+        </svg>
+
+        <!-- 内容包装器 -->
+        <div class="content-wrapper">
+            <!-- 页面头部 -->
+            <header class="page-header">
+                <div class="theorist-info">
+                    <div class="portrait-placeholder">
+                        <div class="portrait-icon">👨‍🔬</div>
+                    </div>
+                    <div class="theorist-details">
+                        <h1 class="theorist-name">埃里克·埃里克森</h1>
+                        <p class="theorist-title">发展心理学家</p>
+                        <p class="life-span">1902-1994</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 主要内容 -->
+            <main class="main-content">
+                <!-- 理论概述 -->
+                <section class="theory-overview">
+                    <h2 class="section-title">心理社会发展理论</h2>
+                    <div class="theory-description">
+                        <blockquote class="main-quote">
+                            "每个人的一生都要经历八个发展阶段，每个阶段都有其特定的发展任务和心理社会危机。"
+                        </blockquote>
+                        <div class="theory-essence">
+                            <h3>理论核心</h3>
+                            <p>埃里克森的心理社会发展理论强调个体在整个生命周期中都在不断发展，每个阶段都面临特定的心理社会危机，成功解决这些危机将获得相应的品质和能力。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 理论连接 -->
+                <section class="theory-connection">
+                    <h2 class="section-title">与人本主义的契合点</h2>
+                    <div class="connection-grid">
+                        <div class="connection-item">
+                            <div class="connection-icon">🌱</div>
+                            <h3>发展潜能</h3>
+                            <p>强调个体在每个阶段都有成长和发展的潜能，与人本主义的自我实现理念相呼应。</p>
+                        </div>
+                        <div class="connection-item">
+                            <div class="connection-icon">🎯</div>
+                            <h3>整体性视角</h3>
+                            <p>关注个体的整体发展，不仅仅是心理层面，还包括社会关系和环境因素。</p>
+                        </div>
+                        <div class="connection-item">
+                            <div class="connection-icon">💪</div>
+                            <h3>积极品质</h3>
+                            <p>每个发展阶段成功解决危机后都会获得积极的心理品质，体现了人性的积极面。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 埃里克森八阶段 -->
+                <section class="erikson-stages">
+                    <h2 class="section-title">心理社会发展八阶段</h2>
+                    <div class="stages-grid">
+                        <div class="stage-card" data-stage="1">
+                            <div class="stage-number">1</div>
+                            <h3>信任 vs 不信任</h3>
+                            <p class="stage-age">0-18个月</p>
+                            <p class="stage-description">建立对世界和他人的基本信任感</p>
+                            <div class="stage-virtue">希望</div>
+                        </div>
+                        <div class="stage-card" data-stage="2">
+                            <div class="stage-number">2</div>
+                            <h3>自主 vs 羞耻</h3>
+                            <p class="stage-age">18个月-3岁</p>
+                            <p class="stage-description">发展自主性和独立性</p>
+                            <div class="stage-virtue">意志</div>
+                        </div>
+                        <div class="stage-card" data-stage="3">
+                            <div class="stage-number">3</div>
+                            <h3>主动 vs 内疚</h3>
+                            <p class="stage-age">3-5岁</p>
+                            <p class="stage-description">学会主动探索和承担责任</p>
+                            <div class="stage-virtue">目标</div>
+                        </div>
+                        <div class="stage-card" data-stage="4">
+                            <div class="stage-number">4</div>
+                            <h3>勤奋 vs 自卑</h3>
+                            <p class="stage-age">5-12岁</p>
+                            <p class="stage-description">发展学习和工作的能力</p>
+                            <div class="stage-virtue">能力</div>
+                        </div>
+                        <div class="stage-card" data-stage="5">
+                            <div class="stage-number">5</div>
+                            <h3>同一性 vs 角色混乱</h3>
+                            <p class="stage-age">12-18岁</p>
+                            <p class="stage-description">建立稳定的自我认同</p>
+                            <div class="stage-virtue">忠诚</div>
+                        </div>
+                        <div class="stage-card" data-stage="6">
+                            <div class="stage-number">6</div>
+                            <h3>亲密 vs 孤独</h3>
+                            <p class="stage-age">18-40岁</p>
+                            <p class="stage-description">建立亲密的人际关系</p>
+                            <div class="stage-virtue">爱</div>
+                        </div>
+                        <div class="stage-card" data-stage="7">
+                            <div class="stage-number">7</div>
+                            <h3>繁衍 vs 停滞</h3>
+                            <p class="stage-age">40-65岁</p>
+                            <p class="stage-description">关心下一代和社会贡献</p>
+                            <div class="stage-virtue">关怀</div>
+                        </div>
+                        <div class="stage-card" data-stage="8">
+                            <div class="stage-number">8</div>
+                            <h3>完整 vs 绝望</h3>
+                            <p class="stage-age">65岁以上</p>
+                            <p class="stage-description">回顾人生，获得智慧</p>
+                            <div class="stage-virtue">智慧</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 案例应用 -->
+                <section class="case-application">
+                    <h2 class="section-title">理论应用</h2>
+                    <div class="application-grid">
+                        <div class="application-item" data-application="identity">
+                            <div class="application-icon">🔍</div>
+                            <h4>身份探索</h4>
+                            <p>帮助青少年探索和建立稳定的自我认同，解决角色混乱问题。</p>
+                        </div>
+                        <div class="application-item" data-application="relationship">
+                            <div class="application-icon">❤️</div>
+                            <h4>关系建立</h4>
+                            <p>指导年轻成人建立健康的亲密关系，避免孤独感。</p>
+                        </div>
+                        <div class="application-item" data-application="generativity">
+                            <div class="application-icon">🌟</div>
+                            <h4>生产性发展</h4>
+                            <p>鼓励中年人关注社会贡献和下一代的培养。</p>
+                        </div>
+                        <div class="application-item" data-application="integration">
+                            <div class="application-icon">🧠</div>
+                            <h4>人格整合</h4>
+                            <p>帮助老年人回顾人生，实现人格的完整性。</p>
+                        </div>
+                    </div>
+                </section>
+ 
+                <!-- 整合总结 -->
+                <section class="integration-summary">
+                    <h2 class="section-title">理论整合</h2>
+                    <div class="integration-content">
+                        <div class="integration-point">
+                            <h4>发展连续性</h4>
+                            <p>埃里克森理论强调人的一生都在发展，每个阶段都有其价值和意义，这与人本主义强调人的成长潜能相一致。</p>
+                        </div>
+                        <div class="integration-point">
+                            <h4>积极取向</h4>
+                            <p>理论关注个体如何成功应对发展挑战，获得积极品质，体现了对人性积极面的信念。</p>
+                        </div>
+                        <div class="integration-point">
+                            <h4>环境互动</h4>
+                            <p>强调个体与社会环境的互动，认为发展是个体与环境共同作用的结果。</p>
+                        </div>
+                    </div>
+                </section>
+ 
+            </main>
+        </div>
+
+        <!-- 导航控件 -->
+        <div class="navigation-controls">
+            <button class="nav-btn prev-btn" onclick="navigateToPage(5)">
+                <span class="nav-icon">←</span>
+                <span class="nav-text">上一页</span>
+            </button>
+            <button class="nav-btn next-btn" onclick="navigateToPage(7)">
+                <span class="nav-text">下一页</span>
+                <span class="nav-icon">→</span>
+            </button>
+        </div>
+
+        <!-- 进度指示器 -->
+        <div class="progress-indicator">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div class="page-counter">6 / 10</div>
+        </div>
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/interactions.js"></script>
+    <script src="../assets/js/page6.js"></script>
+    <!-- 导航按钮 -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" onclick="window.location.href='page5.html'">← 上一页</button>
+        <div class="page-counter">
+            <span class="current-page">7</span>
+            <span class="separator">/</span>
+            <span class="total-pages">11</span>
+        </div>
+        <button class="nav-btn next-btn" onclick="window.location.href='page7.html'">下一页 →</button>
+    </div>
+</body>
+</html>
