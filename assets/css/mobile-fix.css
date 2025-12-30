@@ -52,3 +52,14 @@ p, h1, h2, h3, h4, h5, h6, span {
     -webkit-user-select: text;
     user-select: text;
 }
+
+/* 隐藏内嵌导航，显示JavaScript生成的导航 */
+.navigation-system {
+    display: none !important;
+}
+
+.navigation {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
