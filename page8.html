@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实践应用 - 案例模拟</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/page8.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../assets/js/navigation.js?v=1"></script>
+</head>
+<body>
+    <!-- SVG背景 - 突破与重生 -->
+    <svg class="background-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="breakthroughGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+                <stop offset="30%" style="stop-color:#16213e;stop-opacity:1" />
+                <stop offset="70%" style="stop-color:#0f3460;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#533483;stop-opacity:1" />
+            </linearGradient>
+            
+            <radialGradient id="lightBurst" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" style="stop-color:#f1c40f;stop-opacity:1" />
+                <stop offset="30%" style="stop-color:#f39c12;stop-opacity:0.8" />
+                <stop offset="70%" style="stop-color:#e74c3c;stop-opacity:0.4" />
+                <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:0.1" />
+            </radialGradient>
+            
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+            
+            <filter id="lightGlow">
+                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+        
+        <!-- 背景 -->
+        <rect width="100%" height="100%" fill="url(#breakthroughGradient)"/>
+        
+        <!-- 破碎的壁垒 -->
+        <g class="barriers">
+            <path class="barrier-fragment" d="M 200 400 L 400 350 L 450 500 L 250 550 Z" fill="#2c3e50" opacity="0.6"/>
+            <path class="barrier-fragment" d="M 500 300 L 700 280 L 750 450 L 550 470 Z" fill="#34495e" opacity="0.5"/>
+            <path class="barrier-fragment" d="M 800 350 L 1000 320 L 1050 500 L 850 530 Z" fill="#2c3e50" opacity="0.4"/>
+        </g>
+        
+        <!-- 突破的光芒 -->
+        <g class="light-rays">
+            <path class="light-ray" d="M 960 540 L 960 100" stroke="#f1c40f" stroke-width="6" opacity="0.8" filter="url(#lightGlow)"/>
+            <path class="light-ray" d="M 960 540 L 1200 200" stroke="#f39c12" stroke-width="4" opacity="0.7" filter="url(#lightGlow)"/>
+            <path class="light-ray" d="M 960 540 L 720 200" stroke="#e67e22" stroke-width="4" opacity="0.7" filter="url(#lightGlow)"/>
+            <path class="light-ray" d="M 960 540 L 1400 300" stroke="#e74c3c" stroke-width="3" opacity="0.6" filter="url(#lightGlow)"/>
+            <path class="light-ray" d="M 960 540 L 520 300" stroke="#e74c3c" stroke-width="3" opacity="0.6" filter="url(#lightGlow)"/>
+        </g>
+        
+        <!-- 中心光源 -->
+        <circle class="light-source" cx="960" cy="540" r="40" fill="url(#lightBurst)" filter="url(#lightGlow)"/>
+        
+        <!-- 新生的花朵 -->
+        <g class="growth-flowers">
+            <g class="flower" transform="translate(300, 700)">
+                <circle cx="0" cy="0" r="8" fill="#e74c3c" opacity="0.8"/>
+                <circle cx="-12" cy="-8" r="6" fill="#f39c12" opacity="0.7"/>
+                <circle cx="12" cy="-8" r="6" fill="#f39c12" opacity="0.7"/>
+                <circle cx="-8" cy="12" r="6" fill="#f39c12" opacity="0.7"/>
+                <circle cx="8" cy="12" r="6" fill="#f39c12" opacity="0.7"/>
+            </g>
+            <g class="flower" transform="translate(1620, 750)">
+                <circle cx="0" cy="0" r="10" fill="#9b59b6" opacity="0.8"/>
+                <circle cx="-15" cy="-10" r="7" fill="#3498db" opacity="0.7"/>
+                <circle cx="15" cy="-10" r="7" fill="#3498db" opacity="0.7"/>
+                <circle cx="-10" cy="15" r="7" fill="#3498db" opacity="0.7"/>
+                <circle cx="10" cy="15" r="7" fill="#3498db" opacity="0.7"/>
+            </g>
+        </g>
+        
+        <!-- 希望之路 -->
+        <path class="hope-path" d="M 100 800 Q 500 600 960 540 Q 1400 600 1820 800" 
+              stroke="#27ae60" stroke-width="8" fill="none" opacity="0.6" filter="url(#glow)"/>
+        
+        <!-- 飞舞的光点 -->
+        <g class="light-particles">
+            <circle class="particle" cx="400" cy="300" r="3" fill="#f1c40f" opacity="0.8"/>
+            <circle class="particle" cx="1520" cy="350" r="2" fill="#e67e22" opacity="0.7"/>
+            <circle class="particle" cx="600" cy="200" r="4" fill="#3498db" opacity="0.6"/>
+            <circle class="particle" cx="1300" cy="250" r="3" fill="#9b59b6" opacity="0.8"/>
+            <circle class="particle" cx="800" cy="150" r="2" fill="#e74c3c" opacity="0.7"/>
+            <circle class="particle" cx="1100" cy="180" r="3" fill="#27ae60" opacity="0.6"/>
+        </g>
+    </svg>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <header class="page-header">
+            <h1 class="main-title">转机与解决</h1>
+            <h2 class="subtitle">突破困境的关键时刻</h2>
+            <p class="intro-text">每一次困境都蕴含着成长的种子，关键在于如何发现并培育它</p>
+        </header>
+
+        <main class="content">
+            <!-- 转机发现 -->
+            <section class="breakthrough-section">
+                <div class="breakthrough-card">
+                    <div class="breakthrough-icon">💡</div>
+                    <h3>转机的发现</h3>
+                    <div class="breakthrough-content">
+                        <p class="breakthrough-description">
+                            在深入的自我探索和专业心理咨询的帮助下，我开始意识到困境的根源不在于外在的期望冲突，
+                            而在于内心对"完美自我"的过度追求。真正的转机来自于接纳自己的不完美，
+                            理解成长是一个持续的过程，而非一个固定的终点。
+                        </p>
+                        <div class="insight-points">
+                            <div class="insight-item">
+                                <span class="insight-number">1</span>
+                                <div class="insight-text">
+                                    <h4>自我接纳的重要性</h4>
+                                    <p>学会接纳自己的局限性和不完美，这是心理健康的基础</p>
+                                </div>
+                            </div>
+                            <div class="insight-item">
+                                <span class="insight-number">2</span>
+                                <div class="insight-text">
+                                    <h4>成长的动态性</h4>
+                                    <p>认识到身份认同是一个动态发展的过程，而非静态的标签</p>
+                                </div>
+                            </div>
+                            <div class="insight-item">
+                                <span class="insight-number">3</span>
+                                <div class="insight-text">
+                                    <h4>内在价值的发现</h4>
+                                    <p>找到超越外在评价的内在价值感和自我价值</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 解决策略 -->
+            <section class="solution-section">
+                <h3 class="section-title">解决策略与实践</h3>
+                <div class="solution-grid">
+                    <!-- 心理治疗 -->
+                    <div class="solution-card therapy-card">
+                        <div class="solution-header">
+                            <div class="solution-icon">🧠</div>
+                            <h4>心理治疗介入</h4>
+                        </div>
+                        <div class="solution-content">
+                            <div class="therapy-approach">
+                                <h5>人本主义治疗</h5>
+                                <ul>
+                                    <li>无条件积极关注</li>
+                                    <li>真诚一致的治疗关系</li>
+                                    <li>共情理解</li>
+                                    <li>促进自我实现</li>
+                                </ul>
+                            </div>
+                            <div class="therapy-techniques">
+                                <h5>具体技术</h5>
+                                <div class="technique-tags">
+                                    <span class="technique-tag">反映技术</span>
+                                    <span class="technique-tag">澄清技术</span>
+                                    <span class="technique-tag">情感表达</span>
+                                    <span class="technique-tag">价值探索</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 认知重构 -->
+                    <div class="solution-card cognitive-card">
+                        <div class="solution-header">
+                            <div class="solution-icon">🔄</div>
+                            <h4>认知重构</h4>
+                        </div>
+                        <div class="solution-content">
+                            <div class="cognitive-changes">
+                                <div class="change-item">
+                                    <span class="before">旧观念</span>
+                                    <p>"我必须满足所有人的期望"</p>
+                                </div>
+                                <div class="arrow">→</div>
+                                <div class="change-item">
+                                    <span class="after">新观念</span>
+                                    <p>"我可以在尊重他人的同时坚持自己的价值观"</p>
+                                </div>
+                            </div>
+                            <div class="cognitive-changes">
+                                <div class="change-item">
+                                    <span class="before">旧观念</span>
+                                    <p>"不完美就是失败"</p>
+                                </div>
+                                <div class="arrow">→</div>
+                                <div class="change-item">
+                                    <span class="after">新观念</span>
+                                    <p>"不完美是成长的机会"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 行为改变 -->
+                    <div class="solution-card behavior-card">
+                        <div class="solution-header">
+                            <div class="solution-icon">🎯</div>
+                            <h4>行为改变计划</h4>
+                        </div>
+                        <div class="solution-content">
+                            <div class="behavior-steps">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>自我观察</h5>
+                                        <p>记录情绪波动和触发因素</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>边界设定</h5>
+                                        <p>学会说"不"，设定健康边界</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>价值实践</h5>
+                                        <p>在日常生活中实践个人价值观</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 支持系统 -->
+                    <div class="solution-card support-card">
+                        <div class="solution-header">
+                            <div class="solution-icon">🤝</div>
+                            <h4>支持系统建立</h4>
+                        </div>
+                        <div class="solution-content">
+                            <div class="support-network">
+                                <div class="support-level">
+                                    <h5>专业支持</h5>
+                                    <div class="support-items">
+                                        <span class="support-item">心理咨询师</span>
+                                        <span class="support-item">精神科医生</span>
+                                        <span class="support-item">支持小组</span>
+                                    </div>
+                                </div>
+                                <div class="support-level">
+                                    <h5>社会支持</h5>
+                                    <div class="support-items">
+                                        <span class="support-item">理解的朋友</span>
+                                        <span class="support-item">支持性家庭成员</span>
+                                        <span class="support-item">同伴群体</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 效果评估 -->
+            <section class="evaluation-section">
+                <h3 class="section-title">治疗效果评估</h3>
+                <div class="evaluation-container">
+                    <div class="evaluation-metrics">
+                        <div class="metric-card">
+                            <div class="metric-icon">📊</div>
+                            <h4>量化指标</h4>
+                            <div class="metric-data">
+                                <div class="metric-item">
+                                    <span class="metric-label">焦虑水平</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-before" style="width: 85%">治疗前: 85%</div>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-after" style="width: 35%">治疗后: 35%</div>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">自我接纳度</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-before" style="width: 30%">治疗前: 30%</div>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-after" style="width: 78%">治疗后: 78%</div>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-label">生活满意度</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-before" style="width: 40%">治疗前: 40%</div>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-after" style="width: 82%">治疗后: 82%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="qualitative-changes">
+                            <div class="change-icon">✨</div>
+                            <h4>质性改变</h4>
+                            <div class="change-list">
+                                <div class="change-point">
+                                    <span class="change-indicator">+</span>
+                                    <p>能够更好地处理他人的期望和自己的需求之间的冲突</p>
+                                </div>
+                                <div class="change-point">
+                                    <span class="change-indicator">+</span>
+                                    <p>建立了更加稳定和一致的自我认同感</p>
+                                </div>
+                                <div class="change-point">
+                                    <span class="change-indicator">+</span>
+                                    <p>在人际关系中表现出更多的真实性和自信</p>
+                                </div>
+                                <div class="change-point">
+                                    <span class="change-indicator">+</span>
+                                    <p>对未来的规划更加清晰和现实</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 关键领悟 -->
+            <section class="insight-section">
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <div class="insight-icon">🌟</div>
+                        <h3>关键领悟</h3>
+                    </div>
+                    <div class="insight-content">
+                        <blockquote class="key-insight">
+                            "真正的成长不是成为别人期望的样子，而是成为最真实的自己。
+                            当我们学会接纳自己的不完美，拥抱内心的复杂性时，
+                            我们就找到了通往内心平静和真正幸福的道路。"
+                        </blockquote>
+                        <div class="insight-author">
+                            <span>—— 治疗过程中的深刻体悟</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 导航控制 -->
+        <nav class="navigation">
+            <button class="nav-btn prev-btn" onclick="NavigationController.prevPage()">
+                <span class="nav-icon">←</span>
+                <span class="nav-text">上一页</span>
+            </button>
+            
+            <div class="page-indicator">
+                <span class="current-page">8</span>
+                <span class="total-pages">/ 10</span>
+            </div>
+            
+            <button class="nav-btn next-btn" onclick="NavigationController.nextPage()">
+                <span class="nav-text">下一页</span>
+                <span class="nav-icon">→</span>
+            </button>
+        </nav>
+
+        <!-- 进度条 -->
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+        </div>
+    </div>
+
+    <!-- 脚本文件 -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/page8.js"></script>
+    <!-- 导航按钮 -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" onclick="window.location.href='page7.html'">← 上一页</button>
+        <div class="page-counter">
+            <span class="current-page">9</span>
+            <span class="separator">/</span>
+            <span class="total-pages">11</span>
+        </div>
+        <button class="nav-btn next-btn" onclick="window.location.href='page9.html'">下一页 →</button>
+    </div>
+</body>
+</html>

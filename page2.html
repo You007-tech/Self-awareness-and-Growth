@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互动体验① - 心理学汇报</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../assets/js/navigation.js?v=1"></script>
+    
+    <!-- 投票系统样式 -->
+    <style>
+        .voting-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.1), rgba(63, 81, 181, 0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .voting-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .qr-section, .stats-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .qr-title, .stats-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .qr-code-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            margin-bottom: 15px;
+        }
+        
+        .qr-code {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .qr-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .qr-instruction {
+            color: #e3f2fd;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .voting-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .control-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 80px;
+        }
+        
+        .start-btn {
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+        }
+        
+        .stop-btn {
+            background: linear-gradient(135deg, #f44336, #ef5350);
+            color: white;
+        }
+        
+        .reset-btn {
+            background: linear-gradient(135deg, #ff9800, #ffb74d);
+            color: white;
+        }
+        
+        .control-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .stats-container {
+            min-height: 200px;
+        }
+        
+        .stats-loading {
+            text-align: center;
+            color: #e3f2fd;
+            padding: 60px 20px;
+        }
+        
+        .option-stat {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .option-label {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .option-count {
+            color: #81d4fa;
+            font-weight: 600;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50, #66bb6a);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .total-votes {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .voting-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .voting-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .control-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+        
+        /* IP配置样式 */
+        .ip-config-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .ip-label {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .ip-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .ip-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 14px;
+        }
+        
+        .ip-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .ip-input:focus {
+            outline: none;
+            border-color: #4caf50;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .update-ip-btn {
+            background: linear-gradient(135deg, #2196f3, #42a5f5);
+            color: white;
+            white-space: nowrap;
+        }
+        
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f44336;
+        }
+        
+        .status-indicator.connected {
+            background: #4caf50;
+        }
+        
+        .status-indicator.disconnected {
+            background: #f44336;
+        }
+        
+        .status-text {
+            color: #ffffff;
+            font-size: 12px;
+        }
+        
+        .ip-hint {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面容器 -->
+    <div class="page-container interactive-page" id="page2">
+        <!-- 深蓝夜空SVG背景 -->
+        <div class="background-svg">
+            <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+                <!-- 夜空背景 -->
+                <defs>
+                    <radialGradient id="nightSky" cx="50%" cy="30%" r="70%">
+                        <stop offset="0%" style="stop-color:#1a237e;stop-opacity:1" />
+                        <stop offset="40%" style="stop-color:#283593;stop-opacity:1" />
+                        <stop offset="70%" style="stop-color:#303f9f;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+                    </radialGradient>
+                    
+                    <!-- 月亮光晕 -->
+                    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#fff3e0;stop-opacity:0.8" />
+                        <stop offset="30%" style="stop-color:#ffecb3;stop-opacity:0.6" />
+                        <stop offset="60%" style="stop-color:#ffe082;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#ffc107;stop-opacity:0" />
+                    </radialGradient>
+                    
+                    <!-- 星云效果 -->
+                    <radialGradient id="nebula" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#9c27b0;stop-opacity:0.3" />
+                        <stop offset="50%" style="stop-color:#673ab7;stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:#3f51b5;stop-opacity:0.1" />
+                    </radialGradient>
+                    
+                    <!-- 流星轨迹 -->
+                    <linearGradient id="meteorTrail" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0" />
+                        <stop offset="50%" style="stop-color:#81d4fa;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#29b6f6;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- 夜空背景 -->
+                <rect width="100%" height="100%" fill="url(#nightSky)" />
+                
+                <!-- 星云 -->
+                <ellipse cx="300" cy="200" rx="150" ry="80" fill="url(#nebula)" opacity="0.4">
+                    <animateTransform attributeName="transform" type="rotate" values="0 300 200;360 300 200" dur="60s" repeatCount="indefinite" />
+                </ellipse>
+                <ellipse cx="900" cy="150" rx="120" ry="60" fill="url(#nebula)" opacity="0.3">
+                    <animateTransform attributeName="transform" type="rotate" values="0 900 150;-360 900 150" dur="80s" repeatCount="indefinite" />
+                </ellipse>
+                
+                <!-- 月亮 -->
+                <g transform="translate(1000,120)" class="interactive" data-info="月亮见证着每个人的成长历程">
+                    <circle cx="0" cy="0" r="80" fill="url(#moonGlow)" opacity="0.6" />
+                    <circle cx="0" cy="0" r="60" fill="#fff9c4" />
+                    <circle cx="0" cy="0" r="55" fill="#fff59d" opacity="0.9" />
+                    
+                    <!-- 月亮表面纹理 -->
+                    <ellipse cx="-15" cy="-20" rx="12" ry="8" fill="#ffecb3" opacity="0.7" />
+                    <ellipse cx="20" cy="10" rx="8" ry="6" fill="#ffecb3" opacity="0.6" />
+                    <ellipse cx="-10" cy="25" rx="6" ry="4" fill="#ffecb3" opacity="0.5" />
+                    <ellipse cx="10" cy="-30" rx="5" ry="3" fill="#ffecb3" opacity="0.6" />
+                    
+                    <!-- 月亮微光动画 -->
+                    <animate attributeName="opacity" values="0.9;1;0.9" dur="8s" repeatCount="indefinite" />
+                </g>
+                
+                <!-- 星星 -->
+                <g class="stars">
+                    <!-- 大星星 -->
+                    <g opacity="0.9">
+                        <circle cx="150" cy="100" r="3" fill="#ffffff" class="interactive" data-info="每颗星星都有自己的光芒">
+                            <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="300" cy="80" r="2.5" fill="#e1f5fe">
+                            <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="450" cy="120" r="3.5" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="600" cy="90" r="2" fill="#e8eaf6">
+                            <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="750" cy="110" r="2.5" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                    
+                    <!-- 中等星星 -->
+                    <g opacity="0.7">
+                        <circle cx="200" cy="160" r="2" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="380" cy="180" r="1.5" fill="#e3f2fd">
+                            <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.2s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="520" cy="140" r="2" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.3s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="680" cy="170" r="1.5" fill="#e8eaf6">
+                            <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2.7s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="820" cy="200" r="2" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.8s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                    
+                    <!-- 小星星 -->
+                    <g opacity="0.5">
+                        <circle cx="100" cy="200" r="1" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="1.8s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="250" cy="220" r="1" fill="#e3f2fd">
+                            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.1s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="400" cy="240" r="1" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.1;0.5;0.1" dur="1.5s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="550" cy="210" r="1" fill="#e8eaf6">
+                            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.4s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="700" cy="230" r="1" fill="#ffffff">
+                            <animate attributeName="opacity" values="0.2;0.6;0.2" dur="1.9s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </g>
+                
+                <!-- 流星 -->
+                <g class="meteors">
+                    <line x1="0" y1="50" x2="80" y2="130" stroke="url(#meteorTrail)" stroke-width="3" opacity="0">
+                        <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="2s" repeatCount="indefinite" />
+                        <animateTransform attributeName="transform" type="translate" values="0,0;200,200" dur="1.5s" begin="2s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="200" y1="30" x2="260" y2="90" stroke="url(#meteorTrail)" stroke-width="2" opacity="0">
+                        <animate attributeName="opacity" values="0;1;0" dur="1.2s" begin="8s" repeatCount="indefinite" />
+                        <animateTransform attributeName="transform" type="translate" values="0,0;150,150" dur="1.2s" begin="8s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="500" y1="20" x2="580" y2="100" stroke="url(#meteorTrail)" stroke-width="2.5" opacity="0">
+                        <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="15s" repeatCount="indefinite" />
+                        <animateTransform attributeName="transform" type="translate" values="0,0;180,180" dur="1.8s" begin="15s" repeatCount="indefinite" />
+                    </line>
+                </g>
+                
+                <!-- 远山轮廓 -->
+                <path d="M0,650 Q200,600 400,620 T800,610 Q1000,590 1200,600 L1200,800 L0,800 Z" 
+                      fill="#1a237e" opacity="0.8" />
+                <path d="M0,700 Q300,650 600,670 T1200,660 L1200,800 L0,800 Z" 
+                      fill="#283593" opacity="0.6" />
+                
+                <!-- 地面微光 -->
+                <ellipse cx="600" cy="750" rx="400" ry="50" fill="#3949ab" opacity="0.3">
+                    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="6s" repeatCount="indefinite" />
+                </ellipse>
+            </svg>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="content-area">
+            <div class="interactive-content">
+                <!-- 页面标题 -->
+                <div class="page-header fade-in-up">
+                    <span class="page-number">02</span>
+                    <h1 class="page-title">互动体验①</h1>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- 问题区域 -->
+                <div class="question-section fade-in-up">
+                    <div class="question-card">
+                        <div class="question-header">
+                            <h2 class="question-title">反思与共鸣</h2>
+                            <div class="question-subtitle">请根据您的个人经历回答以下问题</div>
+                        </div>
+                        
+                        <div class="question-content">
+                            <div class="question-text">
+                                <p class="main-question">
+                                    在您的成长过程中，是否也曾经有过像高远一样的<strong>强烈梦想或兴趣</strong>，
+                                    但后来因为各种原因而产生了怀疑或改变？
+                                </p>
+                            </div>
+                            
+                            <div class="choices-container original-choices">
+                                <button class="choice-btn" data-choice="0">
+                                    <div class="choice-letter">A</div>
+                                    <div class="choice-content">
+                                        <div class="choice-title">有，并且我一直在坚持</div>
+                                        <div class="choice-description">尽管遇到困难，但我始终没有放弃最初的梦想</div>
+                                    </div>
+                                </button>
+                                
+                                <button class="choice-btn" data-choice="1">
+                                    <div class="choice-letter">B</div>
+                                    <div class="choice-content">
+                                        <div class="choice-title">有，但后来因为各种原因放弃了</div>
+                                        <div class="choice-description">曾经很有热情，但现实让我选择了其他道路</div>
+                                    </div>
+                                </button>
+                                
+                                <button class="choice-btn" data-choice="2">
+                                    <div class="choice-letter">C</div>
+                                    <div class="choice-content">
+                                        <div class="choice-title">好像没有如此强烈和明确的感受</div>
+                                        <div class="choice-description">我还在寻找自己真正热爱的事情</div>
+                                    </div>
+                                </button>
+                                
+                                <button class="choice-btn" data-choice="3">
+                                    <div class="choice-letter">D</div>
+                                    <div class="choice-content">
+                                        <div class="choice-title">其他情况</div>
+                                        <div class="choice-description">上述三种情况以外的其他情况</div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 引导文字 -->
+                <div class="guidance-section fade-in-up">
+                    <div class="guidance-card">
+                        <div class="guidance-content">
+                            <h3 class="guidance-title">💭 思考提示</h3>
+                            <p class="guidance-text">
+                                每个人的成长轨迹都是独特的。无论您选择哪个答案，都反映了您独特的人生体验。
+                                这些经历将帮助我们更好地理解<strong>自我认知</strong>的复杂性。
+                            </p>
+                            <div class="guidance-highlight">
+                                <span class="highlight-icon">✨</span>
+                                <span class="highlight-text">点击您的选择，互动环节结束后我们将继续探讨高远的心理状态</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 进度提示 -->
+                <div class="progress-hint fade-in-up">
+                    <div class="hint-content">
+                        <div class="hint-arrow">
+                            <span>→</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    <!-- 导航系统 -->
+        <div class="navigation-system">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 30%"></div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="nav-btn prev-btn">
+                    <span>←</span>
+                </button>
+                <div class="page-dots">
+                    <span class="dot" data-page="0"></span>
+                    <span class="dot" data-page="1"></span>
+                    <span class="dot active" data-page="2"></span>
+                    <span class="dot" data-page="3"></span>
+                    <span class="dot" data-page="4"></span>
+                    <span class="dot" data-page="5"></span>
+                    <span class="dot" data-page="6"></span>
+                    <span class="dot" data-page="7"></span>
+                    <span class="dot" data-page="8"></span>
+                    <span class="dot" data-page="9"></span>
+                </div>
+                <button class="nav-btn next-btn">
+                    <span>→</span>
+                </button>
+            </div>
+            
+            <div class="page-counter">
+                <span class="current-page">3</span>
+                <span class="separator">/</span>
+                <span class="total-pages">10</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/interactions.js"></script>
+    
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 页面进入动画
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }, 300);
+            
+            // 选择按钮交互增强
+            document.querySelectorAll('.choice-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                    this.style.boxShadow = '0 15px 35px rgba(26, 35, 126, 0.4)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('selected')) {
+                        this.style.transform = 'translateY(0) scale(1)';
+                        this.style.boxShadow = '0 8px 25px rgba(26, 35, 126, 0.3)';
+                    }
+                });
+            });
+        });
+    </script>
+    </div>
+    <!-- 导航按钮 -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" onclick="window.location.href='page1.html'">← 上一页</button>
+        <div class="page-counter">
+            <span class="current-page">3</span>
+            <span class="separator">/</span>
+            <span class="total-pages">11</span>
+        </div>
+        <button class="nav-btn next-btn" onclick="window.location.href='page3.html'">下一页 →</button>
+    </div>
+</body>
+</html>

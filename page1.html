@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>案例引入 - 心理学汇报</title>
+    <link rel="stylesheet" href="../assets/css/main.css?v=1">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script>
+        // 调试信息
+        console.log('页面1加载完成');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="../assets/js/navigation.js?v=1"></script>
+    <script>
+        // 全局导航测试函数
+        function testNavigation() {
+            console.log('测试导航功能...');
+            if(window.navigationController) {
+                console.log('导航控制器可用');
+                console.log('当前页面:', window.navigationController.currentPage);
+                console.log('总页面数:', window.navigationController.totalPages);
+                return true;
+            } else {
+                console.log('导航控制器不可用');
+                return false;
+            }
+        }
+        
+        // 手动导航函数
+        function goToNextPage() {
+            console.log('从page1跳转到page2');
+            window.location.href = 'page2.html';
+        }
+        
+        function goToPrevPage() {
+            console.log('从page1返回到首页');
+            window.location.href = '../index.html';
+        }
+    </script>
+</head>
+<body class="page1">
+    <!-- 页面容器 -->
+    <div class="page-container" id="page1">
+        <!-- 飞机模型SVG背景 -->
+        <div class="background-svg">
+            <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+                <!-- 天空背景 -->
+                <defs>
+                    <linearGradient id="skyBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#b0e0e6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f0f8ff;stop-opacity:1" />
+                    </linearGradient>
+                    
+                    <!-- 飞机金属质感 -->
+                    <linearGradient id="planeBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#e8eaf6;stop-opacity:1" />
+                        <stop offset="30%" style="stop-color:#c5cae9;stop-opacity:1" />
+                        <stop offset="70%" style="stop-color:#9fa8da;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#7986cb;stop-opacity:1" />
+                    </linearGradient>
+                    
+                    <!-- 云朵阴影 -->
+                    <filter id="cloudShadow">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+                    </filter>
+                    
+                    <!-- 飞机阴影 -->
+                    <filter id="planeShadow">
+                        <feDropShadow dx="5" dy="5" stdDeviation="8" flood-opacity="0.4"/>
+                    </filter>
+                </defs>
+                
+                <!-- 天空背景 -->
+                <rect width="100%" height="100%" fill="url(#skyBg)" />
+                
+                <!-- 远景云朵 -->
+                <g opacity="0.6" filter="url(#cloudShadow)">
+                    <ellipse cx="200" cy="150" rx="80" ry="40" fill="#ffffff">
+                        <animateTransform attributeName="transform" type="translate" values="0,0;100,0;0,0" dur="30s" repeatCount="indefinite" />
+                    </ellipse>
+                    <ellipse cx="500" cy="100" rx="120" ry="60" fill="#ffffff">
+                        <animateTransform attributeName="transform" type="translate" values="0,0;-80,0;0,0" dur="25s" repeatCount="indefinite" />
+                    </ellipse>
+                    <ellipse cx="900" cy="180" rx="100" ry="50" fill="#ffffff">
+                        <animateTransform attributeName="transform" type="translate" values="0,0;60,0;0,0" dur="35s" repeatCount="indefinite" />
+                    </ellipse>
+                </g>
+                
+                <!-- 主要飞机模型 -->
+                <g transform="translate(600,400)" filter="url(#planeShadow)" class="interactive" data-info="这架飞机代表着高远的航空梦想">
+                    <!-- 机身 -->
+                    <ellipse cx="0" cy="0" rx="150" ry="25" fill="url(#planeBody)" />
+                    <ellipse cx="0" cy="0" rx="140" ry="20" fill="#e3f2fd" opacity="0.8" />
+                    
+                    <!-- 机头 -->
+                    <path d="M-150,0 Q-180,-15 -200,0 Q-180,15 -150,0" fill="#1976d2" />
+                    <circle cx="-185" cy="0" r="8" fill="#0d47a1" />
+                    
+                    <!-- 驾驶舱 -->
+                    <ellipse cx="-80" cy="0" rx="30" ry="15" fill="#64b5f6" opacity="0.7" />
+                    <rect x="-110" y="-10" width="60" height="20" rx="10" fill="#42a5f5" opacity="0.5" />
+                    
+                    <!-- 主翼 -->
+                    <ellipse cx="-20" cy="0" rx="8" ry="80" fill="url(#planeBody)" />
+                    <ellipse cx="-20" cy="0" rx="6" ry="75" fill="#e3f2fd" opacity="0.8" />
+                    
+                    <!-- 尾翼 -->
+                    <path d="M120,0 L150,-40 L180,-35 L160,0 L180,35 L150,40 Z" fill="url(#planeBody)" />
+                    <path d="M125,0 L150,-35 L170,-30 L155,0 L170,30 L150,35 Z" fill="#e3f2fd" opacity="0.8" />
+                    
+                    <!-- 垂直尾翼 -->
+                    <path d="M140,0 L160,-50 L180,-45 L165,-5 Z" fill="url(#planeBody)" />
+                    <path d="M145,0 L160,-45 L175,-40 L162,-5 Z" fill="#e3f2fd" opacity="0.8" />
+                    
+                    <!-- 发动机 -->
+                    <ellipse cx="-40" cy="-60" rx="15" ry="25" fill="#424242" />
+                    <ellipse cx="-40" cy="60" rx="15" ry="25" fill="#424242" />
+                    <circle cx="-40" cy="-60" r="12" fill="#616161" />
+                    <circle cx="-40" cy="60" r="12" fill="#616161" />
+                    
+                    <!-- 螺旋桨 -->
+                    <g transform="translate(-40,-60)">
+                        <line x1="-20" y1="0" x2="20" y2="0" stroke="#37474f" stroke-width="3" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" values="0;360" dur="0.1s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="0" y1="-20" x2="0" y2="20" stroke="#37474f" stroke-width="3" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" values="0;360" dur="0.1s" repeatCount="indefinite" />
+                        </line>
+                    </g>
+                    
+                    <g transform="translate(-40,60)">
+                        <line x1="-20" y1="0" x2="20" y2="0" stroke="#37474f" stroke-width="3" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" values="0;360" dur="0.1s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="0" y1="-20" x2="0" y2="20" stroke="#37474f" stroke-width="3" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" values="0;360" dur="0.1s" repeatCount="indefinite" />
+                        </line>
+                    </g>
+                    
+                    <!-- 机身细节 -->
+                    <rect x="-120" y="-5" width="240" height="2" fill="#1976d2" opacity="0.6" />
+                    <rect x="-120" y="3" width="240" height="2" fill="#1976d2" opacity="0.6" />
+                    
+                    <!-- 舷窗 -->
+                    <circle cx="-60" cy="0" r="6" fill="#81d4fa" opacity="0.8" />
+                    <circle cx="-30" cy="0" r="6" fill="#81d4fa" opacity="0.8" />
+                    <circle cx="0" cy="0" r="6" fill="#81d4fa" opacity="0.8" />
+                    <circle cx="30" cy="0" r="6" fill="#81d4fa" opacity="0.8" />
+                    <circle cx="60" cy="0" r="6" fill="#81d4fa" opacity="0.8" />
+                    
+                    <!-- 飞机轻微摆动动画 -->
+                    <animateTransform attributeName="transform" type="translate" 
+                                    values="600,400;605,395;600,400;595,405;600,400" 
+                                    dur="8s" repeatCount="indefinite" />
+                </g>
+                
+                <!-- 小型飞机编队 -->
+                <g opacity="0.7">
+                    <!-- 小飞机1 -->
+                    <g transform="translate(200,200)" class="interactive" data-info="编队飞行，象征着团队协作">
+                        <ellipse cx="0" cy="0" rx="40" ry="8" fill="#5c6bc0" />
+                        <path d="M-40,0 Q-50,-5 -55,0 Q-50,5 -40,0" fill="#3949ab" />
+                        <ellipse cx="-8" cy="0" rx="3" ry="20" fill="#5c6bc0" />
+                        <path d="M30,0 L40,-12 L45,-10 L38,0 L45,10 L40,12 Z" fill="#5c6bc0" />
+                        <animateTransform attributeName="transform" type="translate" 
+                                        values="200,200;250,180;300,200;250,220;200,200" 
+                                        dur="20s" repeatCount="indefinite" />
+                    </g>
+                    
+                    <!-- 小飞机2 -->
+                    <g transform="translate(150,250)" class="interactive" data-info="追随梦想的伙伴">
+                        <ellipse cx="0" cy="0" rx="35" ry="7" fill="#7986cb" />
+                        <path d="M-35,0 Q-43,-4 -47,0 Q-43,4 -35,0" fill="#5c6bc0" />
+                        <ellipse cx="-6" cy="0" rx="2" ry="18" fill="#7986cb" />
+                        <path d="M26,0 L35,-10 L39,-8 L33,0 L39,8 L35,10 Z" fill="#7986cb" />
+                        <animateTransform attributeName="transform" type="translate" 
+                                        values="150,250;200,230;250,250;200,270;150,250" 
+                                        dur="22s" repeatCount="indefinite" />
+                    </g>
+                    
+                    <!-- 小飞机3 -->
+                    <g transform="translate(100,300)" class="interactive" data-info="梦想的起点">
+                        <ellipse cx="0" cy="0" rx="30" ry="6" fill="#9fa8da" />
+                        <path d="M-30,0 Q-37,-3 -40,0 Q-37,3 -30,0" fill="#7986cb" />
+                        <ellipse cx="-5" cy="0" rx="2" ry="15" fill="#9fa8da" />
+                        <path d="M22,0 L30,-8 L33,-6 L28,0 L33,6 L30,8 Z" fill="#9fa8da" />
+                        <animateTransform attributeName="transform" type="translate" 
+                                        values="100,300;150,280;200,300;150,320;100,300" 
+                                        dur="18s" repeatCount="indefinite" />
+                    </g>
+                </g>
+                
+                <!-- 飞行轨迹线 -->
+                <g opacity="0.3" stroke="#1976d2" stroke-width="2" fill="none" stroke-dasharray="10,5">
+                    <path d="M50,350 Q300,250 600,400 T1150,300">
+                        <animate attributeName="stroke-dashoffset" values="0;-30" dur="3s" repeatCount="indefinite" />
+                    </path>
+                    <path d="M0,400 Q200,300 400,350 T800,250">
+                        <animate attributeName="stroke-dashoffset" values="0;-30" dur="4s" repeatCount="indefinite" />
+                    </path>
+                </g>
+                
+                <!-- 高空云层 -->
+                <g opacity="0.4" fill="#ffffff">
+                    <ellipse cx="800" cy="80" rx="150" ry="30">
+                        <animateTransform attributeName="transform" type="translate" values="0,0;-50,0;0,0" dur="40s" repeatCount="indefinite" />
+                    </ellipse>
+                    <ellipse cx="1000" cy="120" rx="100" ry="25">
+                        <animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="35s" repeatCount="indefinite" />
+                    </ellipse>
+                </g>
+            </svg>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="content-area">
+            <div class="centered-layout">
+                <!-- 居中内容 -->
+                <div class="center-content slide-in-up">
+                    <div class="page-header">
+                        <span class="page-number">01</span>
+                        <h1 class="page-title">案例引入</h1>
+                        <div class="title-underline"></div>
+                    </div>
+
+                    <div class="case-introduction">
+                        <h2 class="section-title">高远的故事</h2>
+                        <div class="story-content">
+                            <div class="story-paragraph">
+                                <p class="story-text large-text">
+                                <style>
+                                .large-text {
+                                    font-size: 1.4em !important;
+                                    line-height: 2.0;
+                                }
+                                </style>
+                                    <strong>高远</strong>在<span class="highlight">家庭压力</span>下被迫放弃飞行梦想，遵从父母意愿学医。<br>
+                                    这导致他内心痛苦、在校表现消沉。最终，在<span class="highlight">班主任的开导</span>下，<br>
+                                    高远母亲醒悟，选择尊重儿子的理想。高远得以重拾<span class="highlight">飞行梦</span>，并最终成功考入航空学校。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="key-points">
+                            <div class="points-grid-2x2">
+                                <style>
+                                .points-grid-2x2 {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-template-rows: repeat(2, 1fr);
+                                    gap: 20px;
+                                    margin-top: 20px;
+                                }
+                                
+                                .point-item {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 15px;
+                                    padding: 20px;
+                                    background: rgba(255, 255, 255, 0.1);
+                                    border-radius: 12px;
+                                    transition: all 0.3s ease;
+                                }
+                                
+                                .point-item:hover {
+                                    background: rgba(255, 255, 255, 0.2);
+                                    transform: translateY(-2px);
+                                }
+                                
+                                .point-icon {
+                                    font-size: 2.5em;
+                                    flex-shrink: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 60px;
+                                    height: 60px;
+                                }
+                                
+                                .point-text {
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 5px;
+                                }
+                                
+                                .point-text strong {
+                                    font-size: 1.3em;
+                                    color: #1976d2;
+                                    font-weight: 600;
+                                }
+                                
+                                .point-text span {
+                                    font-size: 1.1em;
+                                    color: #666;
+                                    line-height: 1.4;
+                                    white-space: nowrap;
+                                }
+                                </style>
+                                <div class="point-item">
+                                    <div class="point-icon">✈️</div>
+                                    <div class="point-text">
+                                        <strong>初始梦想</strong>
+                                        <span>对成为飞行员的热情</span>
+                                    </div>
+                                </div>
+                                <div class="point-item">
+                                    <div class="point-icon">📚</div>
+                                    <div class="point-text">
+                                        <strong>现实挑战</strong>
+                                        <span>学业上的困难</span>
+                                    </div>
+                                </div>
+                                <div class="point-item">
+                                    <div class="point-icon">👨‍👩‍👦</div>
+                                    <div class="point-text">
+                                        <strong>外界压力</strong>
+                                        <span>哥哥离世，父母希望他从医</span>
+                                    </div>
+                                </div>
+                                <div class="point-item">
+                                    <div class="point-icon">❓</div>
+                                    <div class="point-text">
+                                        <strong>内心困惑</strong>
+                                        <span>自我怀疑与迷茫</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-summary">
+                    </div>
+                    
+                    <!-- 向下一页的引导 -->
+                    <div class="next-page-preview">
+                        <p class="preview-text">让我们从案例的详细分析开始，逐步揭示青少年同一性危机的本质...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- 导航系统 -->
+        <div class="navigation-system">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 20%"></div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="nav-btn prev-btn">
+                    <span>←</span>
+                </button>
+                <div class="page-dots">
+                    <span class="dot" data-page="0"></span>
+                    <span class="dot active" data-page="1"></span>
+                    <span class="dot" data-page="2"></span>
+                    <span class="dot" data-page="3"></span>
+                    <span class="dot" data-page="4"></span>
+                    <span class="dot" data-page="5"></span>
+                    <span class="dot" data-page="6"></span>
+                    <span class="dot" data-page="7"></span>
+                    <span class="dot" data-page="8"></span>
+                    <span class="dot" data-page="9"></span>
+                </div>
+                <button class="nav-btn next-btn">
+                    <span>→</span>
+                </button>
+            </div>
+            
+            <div class="page-counter">
+                <span class="current-page">2</span>
+                <span class="separator">/</span>
+                <span class="total-pages">10</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/interactions.js"></script>
+    
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化导航控制器
+            window.navigationController = new NavigationController();
+            
+            // 设置当前页面
+            window.navigationController.currentPage = 1;
+            window.navigationController.updateNavigation();
+            
+            // 页面进入动画
+            setTimeout(() => {
+                document.querySelectorAll('.slide-in-left, .slide-in-right').forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateX(0)';
+                    }, index * 300);
+                });
+            }, 300);
+        });
+    </script>
+    </div>
+    <!-- 导航按钮 -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" onclick="goToPrevPage()">← 上一页</button>
+        <div class="page-counter">
+            <span class="current-page">2</span>
+            <span class="separator">/</span>
+            <span class="total-pages">11</span>
+        </div>
+        <button class="nav-btn next-btn" onclick="goToNextPage()">下一页 →</button>
+    </div>
+    
+    <script>
+        // 页面加载完成后的调试信息
+        console.log('页面1加载完成，当前URL:', window.location.href);
+        console.log('导航控制器状态:', window.navigationController ? '已加载' : '未加载');
+        
+        // 测试导航功能
+        setTimeout(() => {
+            console.log('延迟测试导航功能...');
+            if(window.navigationController) {
+                console.log('导航控制器可用，当前页面:', window.navigationController.currentPage);
+            } else {
+                console.log('导航控制器仍不可用，尝试重新初始化...');
+                if(typeof NavigationController !== 'undefined') {
+                    window.navigationController = new NavigationController();
+                    console.log('重新初始化完成');
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

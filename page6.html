@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>理论契合 - 埃里克森心理社会发展理论</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/page6.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <script src="../assets/js/navigation.js?v=1"></script>
+</head>
+<body>
+    <!-- 页面容器 -->
+    <div class="page-container" id="page6">
+        <!-- SVG背景 - 发展螺旋 -->
+        <svg class="background-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <radialGradient id="developmentGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#34495e;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+                </radialGradient>
+                <linearGradient id="stageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:0.8" />
+                    <stop offset="50%" style="stop-color:#8e44ad;stop-opacity:0.6" />
+                    <stop offset="100%" style="stop-color:#663399;stop-opacity:0.4" />
+                </linearGradient>
+                <filter id="stageGlow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- 背景 -->
+            <rect width="100%" height="100%" fill="url(#developmentGradient)"/>
+            
+            <!-- 发展螺旋 -->
+            <g class="development-spiral">
+                <path class="spiral-path" d="M 600 100 Q 700 200 600 300 Q 500 400 600 500 Q 700 600 600 700" 
+                      fill="none" stroke="url(#stageGradient)" stroke-width="3" opacity="0.6"/>
+            </g>
+            
+            <!-- 发展阶段节点 -->
+            <g class="stage-nodes">
+                <circle class="stage-node node-1" cx="600" cy="150" r="15" fill="#e74c3c" opacity="0.8"/>
+                <circle class="stage-node node-2" cx="650" cy="250" r="15" fill="#f39c12" opacity="0.8"/>
+                <circle class="stage-node node-3" cx="600" cy="350" r="15" fill="#27ae60" opacity="0.8"/>
+                <circle class="stage-node node-4" cx="550" cy="450" r="15" fill="#3498db" opacity="0.8"/>
+                <circle class="stage-node node-5" cx="600" cy="550" r="15" fill="#9b59b6" opacity="0.8"/>
+            </g>
+            
+            <!-- 连接网络 -->
+            <g class="connection-web">
+                <line class="connection" x1="200" y1="200" x2="400" y2="300" stroke="#f39c12" stroke-width="1" opacity="0.4"/>
+                <line class="connection" x1="800" y1="250" x2="1000" y2="350" stroke="#e67e22" stroke-width="1" opacity="0.4"/>
+                <line class="connection" x1="150" y1="400" x2="350" y2="500" stroke="#3498db" stroke-width="1" opacity="0.4"/>
+                <line class="connection" x1="850" y1="450" x2="1050" y2="550" stroke="#9b59b6" stroke-width="1" opacity="0.4"/>
+            </g>
+        </svg>
+
+        <!-- 内容包装器 -->
+        <div class="content-wrapper">
+            <!-- 页面头部 -->
+            <header class="page-header">
+                <div class="theorist-info">
+                    <div class="portrait-placeholder">
+                        <div class="portrait-icon">👨‍🔬</div>
+                    </div>
+                    <div class="theorist-details">
+                        <h1 class="theorist-name">埃里克·埃里克森</h1>
+                        <p class="theorist-title">发展心理学家</p>
+                        <p class="life-span">1902-1994</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 主要内容 -->
+            <main class="main-content">
+                <!-- 理论概述 -->
+                <section class="theory-overview">
+                    <h2 class="section-title">心理社会发展理论</h2>
+                    <div class="theory-description">
+                        <blockquote class="main-quote">
+                            "每个人的一生都要经历八个发展阶段，每个阶段都有其特定的发展任务和心理社会危机。"
+                        </blockquote>
+                        <div class="theory-essence">
+                            <h3>理论核心</h3>
+                            <p>埃里克森的心理社会发展理论强调个体在整个生命周期中都在不断发展，每个阶段都面临特定的心理社会危机，成功解决这些危机将获得相应的品质和能力。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 理论连接 -->
+                <section class="theory-connection">
+                    <h2 class="section-title">与人本主义的契合点</h2>
+                    <div class="connection-grid">
+                        <div class="connection-item">
+                            <div class="connection-icon">🌱</div>
+                            <h3>发展潜能</h3>
+                            <p>强调个体在每个阶段都有成长和发展的潜能，与人本主义的自我实现理念相呼应。</p>
+                        </div>
+                        <div class="connection-item">
+                            <div class="connection-icon">🎯</div>
+                            <h3>整体性视角</h3>
+                            <p>关注个体的整体发展，不仅仅是心理层面，还包括社会关系和环境因素。</p>
+                        </div>
+                        <div class="connection-item">
+                            <div class="connection-icon">💪</div>
+                            <h3>积极品质</h3>
+                            <p>每个发展阶段成功解决危机后都会获得积极的心理品质，体现了人性的积极面。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 埃里克森八阶段 -->
+                <section class="erikson-stages">
+                    <h2 class="section-title">心理社会发展八阶段</h2>
+                    <div class="stages-grid">
+                        <div class="stage-card" data-stage="1">
+                            <div class="stage-number">1</div>
+                            <h3>信任 vs 不信任</h3>
+                            <p class="stage-age">0-18个月</p>
+                            <p class="stage-description">建立对世界和他人的基本信任感</p>
+                            <div class="stage-virtue">希望</div>
+                        </div>
+                        <div class="stage-card" data-stage="2">
+                            <div class="stage-number">2</div>
+                            <h3>自主 vs 羞耻</h3>
+                            <p class="stage-age">18个月-3岁</p>
+                            <p class="stage-description">发展自主性和独立性</p>
+                            <div class="stage-virtue">意志</div>
+                        </div>
+                        <div class="stage-card" data-stage="3">
+                            <div class="stage-number">3</div>
+                            <h3>主动 vs 内疚</h3>
+                            <p class="stage-age">3-5岁</p>
+                            <p class="stage-description">学会主动探索和承担责任</p>
+                            <div class="stage-virtue">目标</div>
+                        </div>
+                        <div class="stage-card" data-stage="4">
+                            <div class="stage-number">4</div>
+                            <h3>勤奋 vs 自卑</h3>
+                            <p class="stage-age">5-12岁</p>
+                            <p class="stage-description">发展学习和工作的能力</p>
+                            <div class="stage-virtue">能力</div>
+                        </div>
+                        <div class="stage-card" data-stage="5">
+                            <div class="stage-number">5</div>
+                            <h3>同一性 vs 角色混乱</h3>
+                            <p class="stage-age">12-18岁</p>
+                            <p class="stage-description">建立稳定的自我认同</p>
+                            <div class="stage-virtue">忠诚</div>
+                        </div>
+                        <div class="stage-card" data-stage="6">
+                            <div class="stage-number">6</div>
+                            <h3>亲密 vs 孤独</h3>
+                            <p class="stage-age">18-40岁</p>
+                            <p class="stage-description">建立亲密的人际关系</p>
+                            <div class="stage-virtue">爱</div>
+                        </div>
+                        <div class="stage-card" data-stage="7">
+                            <div class="stage-number">7</div>
+                            <h3>繁衍 vs 停滞</h3>
+                            <p class="stage-age">40-65岁</p>
+                            <p class="stage-description">关心下一代和社会贡献</p>
+                            <div class="stage-virtue">关怀</div>
+                        </div>
+                        <div class="stage-card" data-stage="8">
+                            <div class="stage-number">8</div>
+                            <h3>完整 vs 绝望</h3>
+                            <p class="stage-age">65岁以上</p>
+                            <p class="stage-description">回顾人生，获得智慧</p>
+                            <div class="stage-virtue">智慧</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 案例应用 -->
+                <section class="case-application">
+                    <h2 class="section-title">理论应用</h2>
+                    <div class="application-grid">
+                        <div class="application-item" data-application="identity">
+                            <div class="application-icon">🔍</div>
+                            <h4>身份探索</h4>
+                            <p>帮助青少年探索和建立稳定的自我认同，解决角色混乱问题。</p>
+                        </div>
+                        <div class="application-item" data-application="relationship">
+                            <div class="application-icon">❤️</div>
+                            <h4>关系建立</h4>
+                            <p>指导年轻成人建立健康的亲密关系，避免孤独感。</p>
+                        </div>
+                        <div class="application-item" data-application="generativity">
+                            <div class="application-icon">🌟</div>
+                            <h4>生产性发展</h4>
+                            <p>鼓励中年人关注社会贡献和下一代的培养。</p>
+                        </div>
+                        <div class="application-item" data-application="integration">
+                            <div class="application-icon">🧠</div>
+                            <h4>人格整合</h4>
+                            <p>帮助老年人回顾人生，实现人格的完整性。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 变量关系图 -->
+                <section class="variables-relationship">
+                    <h2 class="section-title">不同变量之间的关系</h2>
+                    <div class="variables-diagram">
+                        <img src="../assets/svg/variables-relationship.svg" alt="不同变量之间的关系" class="variables-svg"/>
+                    </div>
+                    <div class="variables-explanation">
+                        <p>上图展示了心理学研究中不同变量类型之间的复杂关系。理解这些变量关系对于设计严谨的心理学实验和解释研究结果至关重要。</p>
+                    </div>
+                </section>
+
+                <!-- 整合总结 -->
+                <section class="integration-summary">
+                    <h2 class="section-title">理论整合</h2>
+                    <div class="integration-content">
+                        <div class="integration-point">
+                            <h4>发展连续性</h4>
+                            <p>埃里克森理论强调人的一生都在发展，每个阶段都有其价值和意义，这与人本主义强调人的成长潜能相一致。</p>
+                        </div>
+                        <div class="integration-point">
+                            <h4>积极取向</h4>
+                            <p>理论关注个体如何成功应对发展挑战，获得积极品质，体现了对人性积极面的信念。</p>
+                        </div>
+                        <div class="integration-point">
+                            <h4>环境互动</h4>
+                            <p>强调个体与社会环境的互动，认为发展是个体与环境共同作用的结果。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 氯气制备实验教学流程 -->
+                <section class="teaching-process-flow">
+                    <h2 class="section-title">氯气制备实验教学流程</h2>
+                    <div class="flowchart-container">
+                        <svg class="teaching-flowchart" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <!-- 渐变定义 -->
+                                <linearGradient id="preClassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="inClassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="postClassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#229954;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
+                                </linearGradient>
+                                <!-- 阴影滤镜 -->
+                                <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+                                </filter>
+                            </defs>
+
+                            <!-- 背景 -->
+                            <rect width="100%" height="100%" fill="#f8f9fa" opacity="0.1"/>
+
+                            <!-- 课前任务 -->
+                            <g class="pre-class-section">
+                                <!-- 主标题框 -->
+                                <rect x="50" y="50" width="200" height="60" rx="10" fill="url(#preClassGradient)" filter="url(#dropShadow)"/>
+                                <text x="150" y="75" text-anchor="middle" fill="white" font-size="16" font-weight="bold">课前任务</text>
+                                <text x="150" y="95" text-anchor="middle" fill="white" font-size="12">Pre-class Tasks</text>
+
+                                <!-- 任务一：问题导学 -->
+                                <rect x="30" y="140" width="120" height="80" rx="8" fill="#3498db" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="90" y="160" text-anchor="middle" fill="white" font-size="12" font-weight="bold">问题导学</text>
+                                <text x="90" y="175" text-anchor="middle" fill="white" font-size="10">应用调研</text>
+                                <text x="90" y="190" text-anchor="middle" fill="white" font-size="10">方案预测</text>
+                                <text x="90" y="205" text-anchor="middle" fill="white" font-size="10">风险分析</text>
+
+                                <!-- 任务二：知识建构 -->
+                                <rect x="170" y="140" width="120" height="80" rx="8" fill="#2980b9" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="230" y="160" text-anchor="middle" fill="white" font-size="12" font-weight="bold">知识建构</text>
+                                <text x="230" y="175" text-anchor="middle" fill="white" font-size="10">氧化还原</text>
+                                <text x="230" y="190" text-anchor="middle" fill="white" font-size="10">反应原理</text>
+                                <text x="230" y="205" text-anchor="middle" fill="white" font-size="10">装置比较</text>
+                            </g>
+
+                            <!-- 箭头：课前到课堂 -->
+                            <g class="arrow-pre-to-in">
+                                <path d="M 320 180 L 380 180" stroke="url(#arrowGradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                                <polygon points="375,175 385,180 375,185" fill="url(#arrowGradient)"/>
+                            </g>
+
+                            <!-- 课堂任务 -->
+                            <g class="in-class-section">
+                                <!-- 主标题框 -->
+                                <rect x="400" y="50" width="200" height="60" rx="10" fill="url(#inClassGradient)" filter="url(#dropShadow)"/>
+                                <text x="500" y="75" text-anchor="middle" fill="white" font-size="16" font-weight="bold">课堂任务</text>
+                                <text x="500" y="95" text-anchor="middle" fill="white" font-size="12">In-class Tasks</text>
+
+                                <!-- 任务一：方案论证 -->
+                                <rect x="380" y="140" width="110" height="70" rx="8" fill="#e74c3c" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="435" y="160" text-anchor="middle" fill="white" font-size="11" font-weight="bold">方案论证</text>
+                                <text x="435" y="175" text-anchor="middle" fill="white" font-size="9">方案研讨</text>
+                                <text x="435" y="188" text-anchor="middle" fill="white" font-size="9">原理分析</text>
+                                <text x="435" y="201" text-anchor="middle" fill="white" font-size="9">模型归纳</text>
+
+                                <!-- 任务二：系统优化 -->
+                                <rect x="510" y="140" width="110" height="70" rx="8" fill="#c0392b" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="565" y="160" text-anchor="middle" fill="white" font-size="11" font-weight="bold">系统优化</text>
+                                <text x="565" y="175" text-anchor="middle" fill="white" font-size="9">收集净化</text>
+                                <text x="565" y="188" text-anchor="middle" fill="white" font-size="9">尾气处理</text>
+                                <text x="565" y="201" text-anchor="middle" fill="white" font-size="9">装置设计</text>
+
+                                <!-- 任务三：实验实践 -->
+                                <rect x="445" y="230" width="110" height="70" rx="8" fill="#a93226" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="500" y="250" text-anchor="middle" fill="white" font-size="11" font-weight="bold">实验实践</text>
+                                <text x="500" y="265" text-anchor="middle" fill="white" font-size="9">分组实验</text>
+                                <text x="500" y="278" text-anchor="middle" fill="white" font-size="9">现象记录</text>
+                                <text x="500" y="291" text-anchor="middle" fill="white" font-size="9">异常处理</text>
+                            </g>
+
+                            <!-- 箭头：课堂到课后 -->
+                            <g class="arrow-in-to-post">
+                                <path d="M 620 180 L 680 180" stroke="url(#arrowGradient)" stroke-width="3" fill="none"/>
+                                <polygon points="675,175 685,180 675,185" fill="url(#arrowGradient)"/>
+                            </g>
+
+                            <!-- 课后任务 -->
+                            <g class="post-class-section">
+                                <!-- 主标题框 -->
+                                <rect x="700" y="50" width="200" height="60" rx="10" fill="url(#postClassGradient)" filter="url(#dropShadow)"/>
+                                <text x="800" y="75" text-anchor="middle" fill="white" font-size="16" font-weight="bold">课后任务</text>
+                                <text x="800" y="95" text-anchor="middle" fill="white" font-size="12">Post-class Tasks</text>
+
+                                <!-- 任务一：数据分析 -->
+                                <rect x="680" y="140" width="110" height="70" rx="8" fill="#27ae60" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="735" y="160" text-anchor="middle" fill="white" font-size="11" font-weight="bold">数据分析</text>
+                                <text x="735" y="175" text-anchor="middle" fill="white" font-size="9">产率计算</text>
+                                <text x="735" y="188" text-anchor="middle" fill="white" font-size="9">误差分析</text>
+                                <text x="735" y="201" text-anchor="middle" fill="white" font-size="9">工艺改进</text>
+
+                                <!-- 任务二：知识迁移 -->
+                                <rect x="810" y="140" width="110" height="70" rx="8" fill="#229954" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="865" y="160" text-anchor="middle" fill="white" font-size="11" font-weight="bold">知识迁移</text>
+                                <text x="865" y="175" text-anchor="middle" fill="white" font-size="9">SO₂制备</text>
+                                <text x="865" y="188" text-anchor="middle" fill="white" font-size="9">工业对比</text>
+                                <text x="865" y="201" text-anchor="middle" fill="white" font-size="9">绿色化学</text>
+
+                                <!-- 任务三：成果展示 -->
+                                <rect x="745" y="230" width="110" height="70" rx="8" fill="#1e8449" opacity="0.8" filter="url(#dropShadow)"/>
+                                <text x="800" y="250" text-anchor="middle" fill="white" font-size="11" font-weight="bold">成果展示</text>
+                                <text x="800" y="265" text-anchor="middle" fill="white" font-size="9">实验报告</text>
+                                <text x="800" y="278" text-anchor="middle" fill="white" font-size="9">安全评审</text>
+                                <text x="800" y="291" text-anchor="middle" fill="white" font-size="9">专题研讨</text>
+                            </g>
+
+                            <!-- 评价体系连接线 -->
+                            <g class="evaluation-connections">
+                                <path d="M 150 240 Q 150 350 500 350 Q 850 350 800 320" stroke="#f39c12" stroke-width="2" fill="none" stroke-dasharray="5,5" opacity="0.7"/>
+                                <text x="500" y="370" text-anchor="middle" fill="#f39c12" font-size="12" font-weight="bold">持续评价与反馈</text>
+                            </g>
+
+                            <!-- 核心理念 -->
+                            <g class="core-concept">
+                                <ellipse cx="500" cy="450" rx="180" ry="40" fill="#34495e" opacity="0.9" filter="url(#dropShadow)"/>
+                                <text x="500" y="445" text-anchor="middle" fill="white" font-size="14" font-weight="bold">系统化教学设计</text>
+                                <text x="500" y="465" text-anchor="middle" fill="white" font-size="11">理论学习 → 实践探究 → 能力提升</text>
+                            </g>
+
+                            <!-- 关键要素标注 -->
+                            <g class="key-elements">
+                                <circle cx="100" cy="400" r="25" fill="#9b59b6" opacity="0.8"/>
+                                <text x="100" y="405" text-anchor="middle" fill="white" font-size="10" font-weight="bold">安全</text>
+                                
+                                <circle cx="200" cy="400" r="25" fill="#e67e22" opacity="0.8"/>
+                                <text x="200" y="405" text-anchor="middle" fill="white" font-size="10" font-weight="bold">环保</text>
+                                
+                                <circle cx="800" cy="400" r="25" fill="#16a085" opacity="0.8"/>
+                                <text x="800" y="405" text-anchor="middle" fill="white" font-size="10" font-weight="bold">创新</text>
+                                
+                                <circle cx="900" cy="400" r="25" fill="#8e44ad" opacity="0.8"/>
+                                <text x="900" y="405" text-anchor="middle" fill="white" font-size="10" font-weight="bold">协作</text>
+                            </g>
+
+                            <!-- 流程说明 -->
+                            <g class="process-description">
+                                <rect x="50" y="520" width="900" height="120" rx="10" fill="#ecf0f1" opacity="0.9" stroke="#bdc3c7" stroke-width="1"/>
+                                <text x="500" y="545" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="bold">教学流程核心要点</text>
+                                
+                                <!-- 第一行：课前准备和课堂实施 -->
+                                <text x="275" y="570" text-anchor="middle" fill="#2c3e50" font-size="11" font-weight="bold">课前准备：</text>
+                                <text x="275" y="585" text-anchor="middle" fill="#34495e" font-size="10">通过问题导学激发学习兴趣，建构知识基础，培养预习能力</text>
+                                
+                                <text x="725" y="570" text-anchor="middle" fill="#2c3e50" font-size="11" font-weight="bold">课堂实施：</text>
+                                <text x="725" y="585" text-anchor="middle" fill="#34495e" font-size="10">方案论证→系统优化→实验实践，循序渐进提升实验技能</text>
+                                
+                                <!-- 第二行：课后拓展和评价理念 -->
+                                <text x="275" y="610" text-anchor="middle" fill="#2c3e50" font-size="11" font-weight="bold">课后拓展：</text>
+                                <text x="275" y="625" text-anchor="middle" fill="#34495e" font-size="10">数据分析→知识迁移→成果展示，深化理解促进创新</text>
+                                
+                                <text x="725" y="610" text-anchor="middle" fill="#2c3e50" font-size="11" font-weight="bold">评价理念：</text>
+                                <text x="725" y="625" text-anchor="middle" fill="#34495e" font-size="10">过程性评价与结果性评价相结合，关注学生综合素养发展</text>
+                            </g>
+                        </svg>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- 导航控件 -->
+        <div class="navigation-controls">
+            <button class="nav-btn prev-btn" onclick="navigateToPage(5)">
+                <span class="nav-icon">←</span>
+                <span class="nav-text">上一页</span>
+            </button>
+            <button class="nav-btn next-btn" onclick="navigateToPage(7)">
+                <span class="nav-text">下一页</span>
+                <span class="nav-icon">→</span>
+            </button>
+        </div>
+
+        <!-- 进度指示器 -->
+        <div class="progress-indicator">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div class="page-counter">6 / 10</div>
+        </div>
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/interactions.js"></script>
+    <script src="../assets/js/page6.js"></script>
+    <!-- 导航按钮 -->
+    <div class="nav-controls">
+        <button class="nav-btn prev-btn" onclick="window.location.href='page5.html'">← 上一页</button>
+        <div class="page-counter">
+            <span class="current-page">7</span>
+            <span class="separator">/</span>
+            <span class="total-pages">11</span>
+        </div>
+        <button class="nav-btn next-btn" onclick="window.location.href='page7.html'">下一页 →</button>
+    </div>
+</body>
+</html>
